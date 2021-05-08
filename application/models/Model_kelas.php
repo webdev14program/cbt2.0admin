@@ -26,6 +26,14 @@ class Model_kelas extends CI_Model
         return $query->row()->kelas_bdp;
     }
 
+    public function countKelasOTKP()
+    {
+        $sql = "SELECT count(*) AS kelas_otkp FROM `a_kelas`
+                WHERE kelas LIKE '%OTKP%'";
+        $query = $this->db->query($sql);
+        return $query->row()->kelas_otkp;
+    }
+
     public function dataKelas()
     {
         $sql = "SELECT * FROM `a_kelas`

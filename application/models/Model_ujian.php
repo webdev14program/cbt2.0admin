@@ -26,6 +26,14 @@ class Model_ujian extends CI_Model
         return $query->row()->ujian_bdp;
     }
 
+    public function countUjianOTKP()
+    {
+        $sql = "SELECT COUNT(*) AS ujian_otkp FROM `cbt_quiz`
+                WHERE name LIKE '%OTKP%'";
+        $query = $this->db->query($sql);
+        return $query->row()->ujian_otkp;
+    }
+
     public function jadwalUjian()
     {
         $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_course.fullname,cbt_course.shortname,name,timelimit,
@@ -63,6 +71,20 @@ class Model_ujian extends CI_Model
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id
                 WHERE name LIKE '%BDP%'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function jadwalUjianOTKP()
+    {
+        $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_course.fullname,cbt_course.shortname,name,timelimit,
+                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
+                hour(FROM_UNIXTIME(timeopen)) as jam_awal,minute(FROM_UNIXTIME(timeopen)) as menit_awal,
+                hour(FROM_UNIXTIME(timeclose)) as jam_akhir,minute(FROM_UNIXTIME(timeclose)) as menit_akhir
+                FROM `cbt_quiz`
+                INNER JOIN cbt_course
+                ON cbt_quiz.course=cbt_course.id
+                WHERE name LIKE '%OTKP%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -106,6 +128,21 @@ class Model_ujian extends CI_Model
                 INNER JOIN a_siswa
                 ON cbt_user.username=a_siswa.username  
                 WHERE cbt_user.lastname LIKE '%BDP%'
+                ORDER BY `cbt_quiz_attempts`.`timefinish`  ASC";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function statusPesertaOTKP()
+    {
+        $sql = "SELECT * FROM `cbt_quiz_attempts`
+                INNER JOIN cbt_user
+                on cbt_quiz_attempts.userid=cbt_user.id
+                INNER JOIN cbt_quiz
+                ON cbt_quiz_attempts.quiz=cbt_quiz.id
+                INNER JOIN a_siswa
+                ON cbt_user.username=a_siswa.username  
+                WHERE cbt_user.lastname LIKE '%OTKP%'
                 ORDER BY `cbt_quiz_attempts`.`timefinish`  ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -157,6 +194,24 @@ class Model_ujian extends CI_Model
                 INNER JOIN cbt_quiz_attempts
                 ON cbt_quiz.id=cbt_quiz_attempts.quiz
                 WHERE cbt_course.fullname LIKE '%BDP%'
+                GROUP BY cbt_quiz.name";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function rekap_nilai_otkp()
+    {
+        $sql = "SELECT  cbt_quiz.course as id_course,cbt_quiz.*,cbt_course.*,cbt_quiz_attempts.*,
+                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
+                FROM_UNIXTIME(timeclose) AS timeclose, dayname(FROM_UNIXTIME(timeclose)) AS hariakhir, day(FROM_UNIXTIME(timeclose)) AS taggalakhir, monthname(FROM_UNIXTIME(timeclose)) AS bulanakhir, year(FROM_UNIXTIME(timeclose)) AS tahunakhir,
+                hour( FROM_UNIXTIME(timeopen)) AS jamAwal,minute( FROM_UNIXTIME(timeopen)) menitAwal,
+                hour(FROM_UNIXTIME(timeclose)) AS jamAkhir, minute(FROM_UNIXTIME(timeclose)) AS menitAkhir
+                FROM `cbt_quiz`
+                INNER JOIN cbt_course
+                ON cbt_quiz.course=cbt_course.id
+                INNER JOIN cbt_quiz_attempts
+                ON cbt_quiz.id=cbt_quiz_attempts.quiz
+                WHERE cbt_course.fullname LIKE '%OTKP%'
                 GROUP BY cbt_quiz.name";
         $query = $this->db->query($sql);
         return $query->result_array();

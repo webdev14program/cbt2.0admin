@@ -33,8 +33,6 @@ class Login extends CI_Controller
                 redirect('Dashboard_bdp');
             } elseif ($sess_data['level'] == 'adminotkp') {
                 redirect('Dashboard_otkp');
-            } elseif ($sess_data['level'] == 'admintkj') {
-                redirect('Dashboard_tkj');
             } else {
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                     Username dan Password salah

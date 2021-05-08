@@ -27,6 +27,14 @@ class Model_mapel extends CI_Model
         return $query->row()->mapel_bdp;
     }
 
+    public function countMapelOTKP()
+    {
+        $sql = "SELECT COUNT(*) AS mapel_otkp FROM `cbt_course`
+                WHERE format='singleactivity' AND fullname LIKE '%OTKP%'";
+        $query = $this->db->query($sql);
+        return $query->row()->mapel_otkp;
+    }
+
     public function dataMapel()
     {
         $sql = "SELECT * FROM `cbt_course`
@@ -47,6 +55,14 @@ class Model_mapel extends CI_Model
     {
         $sql = "SELECT * FROM `cbt_course`
                 WHERE format='singleactivity' AND fullname LIKE '%BDP%'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataMapelOTKP()
+    {
+        $sql = "SELECT * FROM `cbt_course`
+                WHERE format='singleactivity' AND fullname LIKE '%OTKP%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
