@@ -80,4 +80,14 @@ class Model_siswa extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+
+    public function dataSiswaTKJ()
+    {
+        $sql = "SELECT * FROM `a_siswa`
+                INNER JOIN a_jurusan
+                ON a_siswa.jurusan=a_jurusan.kode
+                where kelas LIKE '%TKJ%'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
