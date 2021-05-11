@@ -6,6 +6,7 @@ class Dashboard_otkp extends CI_Controller
 
     public function index()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['siswaOTKP'] = $this->Model_siswa->countOTKP();
         $isi['kelasOTKP'] = $this->Model_kelas->countKelasOTKP();
@@ -21,6 +22,7 @@ class Dashboard_otkp extends CI_Controller
 
     public function mata_pelajaran_otkp()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['data_mapel_otkp'] = $this->Model_mapel->dataMapelOTKP();
 
@@ -33,6 +35,7 @@ class Dashboard_otkp extends CI_Controller
 
     public function siswa_otkp()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['data_siswa_otkp'] = $this->Model_siswa->dataSiswaOTKP();
 
@@ -45,6 +48,7 @@ class Dashboard_otkp extends CI_Controller
 
     public function jadwal_ujian_otkp()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['ujian_otkp'] = $this->Model_ujian->jadwalUjianOTKP();
 

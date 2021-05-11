@@ -6,6 +6,7 @@ class Dashboard_bdp extends CI_Controller
 
     public function index()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['siswaBDP'] = $this->Model_siswa->countBDP();
         $isi['kelasBDP'] = $this->Model_kelas->countKelasBDP();
@@ -21,6 +22,7 @@ class Dashboard_bdp extends CI_Controller
 
     public function mata_pelajaran_bdp()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['data_mapel_bdp'] = $this->Model_mapel->dataMapelBDP();
 
@@ -33,6 +35,7 @@ class Dashboard_bdp extends CI_Controller
 
     public function siswa_bdp()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['data_siswa_bdp'] = $this->Model_siswa->dataSiswaBDP();
 
@@ -45,6 +48,7 @@ class Dashboard_bdp extends CI_Controller
 
     public function jadwal_ujian_bdp()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['ujian_bdp'] = $this->Model_ujian->jadwalUjianBDP();
 

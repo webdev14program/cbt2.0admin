@@ -7,6 +7,7 @@ class Dashboard_tkj extends CI_Controller
 
     public function index()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['siswaTKJ'] = $this->Model_siswa->countTKJ();
         $isi['kelasTKJ'] = $this->Model_kelas->countKelasTKJ();
@@ -22,6 +23,7 @@ class Dashboard_tkj extends CI_Controller
 
     public function mata_pelajaran_tkj()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['data_mapel_tkj'] = $this->Model_mapel->dataMapelTKJ();
 
@@ -34,6 +36,7 @@ class Dashboard_tkj extends CI_Controller
 
     public function siswa_tkj()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['data_siswa_tkj'] = $this->Model_siswa->dataSiswaTKJ();
 
@@ -46,6 +49,7 @@ class Dashboard_tkj extends CI_Controller
 
     public function jadwal_ujian_tkj()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['ujian_tkj'] = $this->Model_ujian->jadwalUjianTKJ();
 

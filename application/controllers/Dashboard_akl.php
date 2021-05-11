@@ -7,6 +7,7 @@ class Dashboard_akl extends CI_Controller
 
     public function index()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
         $isi['siswaAKL'] = $this->Model_siswa->countAKL();
         $isi['kelasAKL'] = $this->Model_kelas->countKelasAKL();
@@ -22,7 +23,7 @@ class Dashboard_akl extends CI_Controller
 
     public function mata_pelajaran_akl()
     {
-        $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
+        $this->Model_keamanan->getKeamanan();
         $isi['data_mapel_akl'] = $this->Model_mapel->dataMapelAKL();
 
         $isi2['title'] = 'CBT | Administrator';
@@ -34,7 +35,7 @@ class Dashboard_akl extends CI_Controller
 
     public function siswa_akl()
     {
-        $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
+        $this->Model_keamanan->getKeamanan();
         $isi['data_siswa_akl'] = $this->Model_siswa->dataSiswaAKL();
 
         $isi2['title'] = 'CBT | Administrator';
@@ -46,7 +47,8 @@ class Dashboard_akl extends CI_Controller
 
     public function jadwal_ujian_akl()
     {
-        $isi['admin'] = $this->db->get_where('auth', ['username' => $this->session->userdata('username')])->row_array();
+        $this->Model_keamanan->getKeamanan();
+
         $isi['ujian_akl'] = $this->Model_ujian->jadwalUjianAKL();
 
         $isi2['title'] = 'CBT | Administrator';
