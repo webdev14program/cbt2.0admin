@@ -108,7 +108,6 @@
                         <h3 class="text-white  font-italic font-weight-bold"><?= $tkj ?></h3>
                         <h4 class="text-white  font-italic font-weight-bold">Peserta TKJ</h4>
                     </div>
-
                 </div>
             </div>
         </div>
