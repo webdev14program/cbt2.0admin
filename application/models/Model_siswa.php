@@ -12,7 +12,7 @@ class Model_siswa extends CI_Model
 
     public function countAKL()
     {
-        $sql = "SELECT COUNT(*) as akl FROM `cbt_user`
+        $sql = "SELECT COUNT(*) as akl FROM `cbtonline_user`
                 WHERE lastname LIKE '%(X AKL%' OR  lastname LIKE '%(XI AKL%'";
         $query = $this->db->query($sql);
         return $query->row()->akl;
@@ -20,7 +20,7 @@ class Model_siswa extends CI_Model
 
     public function countOTKP()
     {
-        $sql = "SELECT COUNT(*) as otkp FROM `cbt_user`
+        $sql = "SELECT COUNT(*) as otkp FROM `cbtonline_user`
                 WHERE lastname LIKE '%(X OTKP%' OR  lastname LIKE '%(XI OTKP%'";
         $query = $this->db->query($sql);
         return $query->row()->otkp;
@@ -28,7 +28,7 @@ class Model_siswa extends CI_Model
 
     public function countTKJ()
     {
-        $sql = "SELECT COUNT(*) as tkj FROM `cbt_user`
+        $sql = "SELECT COUNT(*) as tkj FROM `cbtonline_user`
                 WHERE lastname LIKE '%(X TKJ%' OR  lastname LIKE '%(XI TKJ%'";
         $query = $this->db->query($sql);
         return $query->row()->tkj;
@@ -36,7 +36,7 @@ class Model_siswa extends CI_Model
 
     public function countBDP()
     {
-        $sql = "SELECT COUNT(*) as bdp FROM `cbt_user`
+        $sql = "SELECT COUNT(*) as bdp FROM `cbtonline_user`
                 WHERE lastname LIKE '%(X BDP%' OR  lastname LIKE '%(XI BDP%'";
         $query = $this->db->query($sql);
         return $query->row()->bdp;
