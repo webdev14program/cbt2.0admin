@@ -19,6 +19,7 @@
         <div class="row" style="margin-top: 50px;">
             <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 150px;height: 150px;">
             <div class="col-md mt-4">
+                <h5></h5>
                 <h5>Mata Pelajaran : <?= $header['fullname'] ?></h5>
                 <h5>Jadwal Awal : <?= $header['jam_awal'] ?>:<?= $header['menit_awal'] ?> - <?= $header['hari_awal']; ?>, <?= $header['tanggal_awal']; ?> <?= $header['bulan_awal']; ?> <?= $header['tahun_awal']; ?></h5>
                 <h5>Jadwal Akhir : <?= $header['jam_akhir'] ?>:<?= $header['menit_akhir'] ?> - <?= $header['hari_akhir']; ?>, <?= $header['tanggal_akhir']; ?> <?= $header['bulan_akhir']; ?> <?= $header['tahun_akhir']; ?></h5>
