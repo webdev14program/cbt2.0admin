@@ -13,7 +13,11 @@ class Model_ujian extends CI_Model
     public function countUjianAKL()
     {
         $sql = "SELECT COUNT(*) AS ujian_akl FROM `cbtonline_quiz`
-                WHERE name LIKE '%AKL%'";
+                INNER JOIN cbtonline_course
+                ON cbtonline_quiz.course=cbtonline_course.id
+                INNER JOIN cbtonline_course_categories
+                ON cbtonline_course.category=cbtonline_course_categories.id
+                WHERE cbtonline_course_categories.name LIKE '%AKL%'";
         $query = $this->db->query($sql);
         return $query->row()->ujian_akl;
     }
