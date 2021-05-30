@@ -17,12 +17,28 @@
 
     <div class="container">
         <div class="row" style="margin-top: 50px;">
-            <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 150px;height: 150px;">
+            <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 200px;height: 200px;margin-top: 20px;">
             <div class="col-md mt-4">
-                <h5>Jenis Ujian : UJIAN KENAIKAN KELAS 2020/2021</h5>
-                <h5>Mata Pelajaran : <?= $header['fullname'] ?></h5>
-                <h5>Jadwal Awal : <?= $header['jam_awal'] ?>:<?= $header['menit_awal'] ?> - <?= $header['jam_akhir'] ?>:<?= $header['menit_akhir'] ?>, <?= $header['hari_awal']; ?>, <?= $header['tanggal_awal']; ?> <?= $header['bulan_awal']; ?> <?= $header['tahun_awal']; ?></h5>
-                <h5>Sekolah : SMK TUNAS HARAPAN JAKARTA BARAT</h5>
+                <table class="table border">
+                    <tbody>
+                        <tr>
+                            <td>JENIS UJIAN</td>
+                            <td class="font-weight-bold">: UJIAN KENAIKAN KELAS 2020/2021 </td>
+                        </tr>
+                        <tr>
+                            <td>MATA PELAJARAN</td>
+                            <td class="font-weight-bold">: <?= $header['fullname'] ?></td>
+                        </tr>
+                        <tr>
+                            <td>JADWAL UJIAN</td>
+                            <td class="font-weight-bold">: <?= $header['hari_awal']; ?>, <?= $header['tanggal_awal']; ?> <?= $header['bulan_awal']; ?> <?= $header['tahun_awal']; ?></td>
+                        </tr>
+                        <tr>
+                            <td>SEKOLAH</td>
+                            <td class="font-weight-bold">: SMK TUNAS HARAPAN JAKARTA BARAT</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div><br>
         <hr style="border-top: 2px dashed black;">

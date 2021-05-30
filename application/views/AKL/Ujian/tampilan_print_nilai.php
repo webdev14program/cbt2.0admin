@@ -21,7 +21,7 @@
             <div class="col-md mt-4">
                 <h5>Jenis Ujian : UJIAN KENAIKAN KELAS 2020/2021</h5>
                 <h5>Mata Pelajaran : <?= $header['fullname'] ?></h5>
-                <h5>Jadwal Awal : <?= $header['jam_awal'] ?>:<?= $header['menit_awal'] ?> - <?= $header['jam_akhir'] ?>:<?= $header['menit_akhir'] ?>, <?= $header['hari_awal']; ?>, <?= $header['tanggal_awal']; ?> <?= $header['bulan_awal']; ?> <?= $header['tahun_awal']; ?></h5>
+                <h5>Jadwal Awal : <?= $header['hari_awal']; ?>, <?= $header['tanggal_awal']; ?> <?= $header['bulan_awal']; ?> <?= $header['tahun_awal']; ?></h5>
                 <h5>Sekolah : SMK TUNAS HARAPAN JAKARTA BARAT</h5>
             </div>
         </div><br>
