@@ -26,8 +26,8 @@
                                 ?>
                                     <td class="text-center"><?= $no++ ?></td>
                                     <td class="text-center"><?= $row['sortorder'] ?></td>
-                                    <td class="text-center">UJIAN KENAIKAN KELAS</td>
-                                    <td class="font-weight-bold"><?= $row['fullname'] ?></td>
+                                    <td class="text-center text-uppercase font-weight-bold">ujian tengah semester (semester Ganjil)</td>
+                                    <td class="font-weight-bold "><?= $row['fullname'] ?></td>
                             </tr>
                         <?php } ?>
                         </tbody>
