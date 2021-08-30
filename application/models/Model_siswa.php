@@ -13,7 +13,7 @@ class Model_siswa extends CI_Model
     public function countAKL()
     {
         $sql = "SELECT COUNT(*) as akl FROM `cbtonline_user`
-                WHERE lastname LIKE '%(X AKL%' OR  lastname LIKE '%(XI AKL%'";
+                WHERE lastname LIKE '%(X AKL%' OR  lastname LIKE '%(XI AKL%' OR  lastname LIKE '%(XII AKL%'";
         $query = $this->db->query($sql);
         return $query->row()->akl;
     }
@@ -21,7 +21,7 @@ class Model_siswa extends CI_Model
     public function countOTKP()
     {
         $sql = "SELECT COUNT(*) as otkp FROM `cbtonline_user`
-                WHERE lastname LIKE '%(X OTKP%' OR  lastname LIKE '%(XI OTKP%'";
+                WHERE lastname LIKE '%(X OTKP%' OR  lastname LIKE '%(XI OTKP%' OR  lastname LIKE '%(XII OTKP%'";
         $query = $this->db->query($sql);
         return $query->row()->otkp;
     }
@@ -29,7 +29,7 @@ class Model_siswa extends CI_Model
     public function countTKJ()
     {
         $sql = "SELECT COUNT(*) as tkj FROM `cbtonline_user`
-                WHERE lastname LIKE '%(X TKJ%' OR  lastname LIKE '%(XI TKJ%'";
+                WHERE lastname LIKE '%(X TKJ%' OR  lastname LIKE '%(XI TKJ%' OR  lastname LIKE '%(XII TKJ%'";
         $query = $this->db->query($sql);
         return $query->row()->tkj;
     }
@@ -37,16 +37,40 @@ class Model_siswa extends CI_Model
     public function countBDP()
     {
         $sql = "SELECT COUNT(*) as bdp FROM `cbtonline_user`
-                WHERE lastname LIKE '%(X BDP%' OR  lastname LIKE '%(XI BDP%'";
+                WHERE lastname LIKE '%(X BDP%' OR  lastname LIKE '%(XI BDP%' OR  lastname LIKE '%(XII BDP%'";
         $query = $this->db->query($sql);
         return $query->row()->bdp;
     }
 
     public function dataSiswa()
     {
-        $sql = "SELECT * FROM `a_siswa`
+        $sql = "SELECT a_siswa.*,a_kelas.*,a_jurusan.*,a_kelas.kelas AS nama_kelas FROM `a_siswa`
+                INNER JOIN a_kelas
+                on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function header_akun_siswa($id_kelas)
+    {
+        $sql = "SELECT a_siswa.*,a_kelas.*,a_jurusan.*,a_kelas.kelas AS nama_kelas FROM `a_siswa`
+                INNER JOIN a_kelas
+                on a_siswa.kelas=a_kelas.id
+                INNER JOIN a_jurusan
+                ON a_siswa.jurusan=a_jurusan.kode
+                WHERE a_siswa.kelas='$id_kelas';";
+        $query = $this->db->query($sql);
+        return $query->row_array();
+    }
+    public function akun_siswa($id_kelas)
+    {
+        $sql = "SELECT a_siswa.*,a_kelas.*,a_jurusan.*,a_kelas.kelas AS nama_kelas FROM `a_siswa`
+                INNER JOIN a_kelas
+                on a_siswa.kelas=a_kelas.id
+                INNER JOIN a_jurusan
+                ON a_siswa.jurusan=a_jurusan.kode
+                WHERE a_siswa.kelas='$id_kelas';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

@@ -27,7 +27,7 @@
                                     <td><?php echo $no++; ?></td>
                                     <td><?= $row['nama_siswa']; ?></td>
                                     <td><?= $row['jurusan']; ?></td>
-                                    <td><?= $row['kelas']; ?></td>
+                                    <td><?= $row['nama_kelas']; ?></td>
                                     <td><?= $row['username'] ?></td>
                                     <td><?= $row['password'] ?></td>
                             </tr>

@@ -44,7 +44,7 @@ class Model_kelas extends CI_Model
 
     public function dataKelas()
     {
-        $sql = "SELECT * FROM `a_kelas`
+        $sql = "SELECT a_kelas.id as id_kelas,a_kelas.*,a_jurusan.* FROM `a_kelas`
                 INNER JOIN a_jurusan
                 ON a_kelas.kode=a_jurusan.kode";
         $query = $this->db->query($sql);

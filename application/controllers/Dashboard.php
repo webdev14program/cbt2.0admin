@@ -85,6 +85,27 @@ class Dashboard extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function akun_peserta()
+    {
+        $this->Model_keamanan->getKeamanan();
+        $isi['kelas'] = $this->Model_kelas->dataKelas();
+
+        $isi2['title'] = 'CBT | Administrator';
+        $isi['content'] = 'Ujian/tampilan_kelas_akun_siswa';
+        $this->load->view('templates/header', $isi2);
+        $this->load->view('tampilan_dashboard', $isi);
+        $this->load->view('templates/footer');
+    }
+
+    public function print_akun($id_kelas)
+    {
+        $this->Model_keamanan->getKeamanan();
+        $isi['header'] = $this->Model_siswa->header_akun_siswa($id_kelas);
+        $isi['siswa'] = $this->Model_siswa->akun_siswa($id_kelas);
+        $isi['title'] = 'CBT | Administrator';
+        $this->load->view('Ujian/print_akun_siswa', $isi);
+    }
+
     public function status_peserta()
     {
         $this->Model_keamanan->getKeamanan();

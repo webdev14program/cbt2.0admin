@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo $title ?></title>
+    <title><?= $title ?></title>
     <link rel="icon" type="image/png" href="<?= base_url() ?>assets/images/logo.png" />
     <!-- Custom fonts for this template-->
     <link href="<?= base_url() ?>assets/vendor/sbadmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

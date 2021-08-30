@@ -23,7 +23,7 @@
                     <tbody>
                         <tr>
                             <td>JENIS UJIAN</td>
-                            <td class="font-weight-bold">: UJIAN KENAIKAN KELAS 2020/2021 </td>
+                            <td class="font-weight-bold">: UJIAN TENGAH SEMESTER 2021/2022 </td>
                         </tr>
                         <tr>
                             <td>MATA PELAJARAN</td>
