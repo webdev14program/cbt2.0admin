@@ -34,7 +34,7 @@
                                 ?>
                                     <td><?= $no++ ?></td>
                                     <td><?= $row['firstname'] ?></td>
-                                    <td><?= $row['kelas'] ?></td>
+                                    <td><?= $row['nama_kelas'] ?></td>
                                     <td><?= $row['name'] ?></td>
                                     <td class="text-center">
                                         <h5 class=" badge badge-info"><?= $row['state'] ?></h5>

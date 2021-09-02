@@ -17,22 +17,19 @@
 
     <div class="container">
         <div class="row" style="margin-top: 50px;">
-            <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 200px;height: 200px;margin-top: 20px;">
+            <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 160px;height: 160px;margin-top: 20px;">
             <div class="col-md mt-4">
                 <table class="table border">
                     <tbody>
                         <tr>
                             <td>JENIS UJIAN</td>
-                            <td class="font-weight-bold">: UJIAN TENGAH SEMESTER 2021/2022 </td>
+                            <td class="font-weight-bold">: UJIAN TENGAH SEMESTER GANJIL 2021/2022 </td>
                         </tr>
                         <tr>
                             <td>MATA PELAJARAN</td>
                             <td class="font-weight-bold">: <?= $header['fullname'] ?></td>
                         </tr>
-                        <tr>
-                            <td>JADWAL UJIAN</td>
-                            <td class="font-weight-bold">: <?= $header['hari_awal']; ?>, <?= $header['tanggal_awal']; ?> <?= $header['bulan_awal']; ?> <?= $header['tahun_awal']; ?></td>
-                        </tr>
+
                         <tr>
                             <td>SEKOLAH</td>
                             <td class="font-weight-bold">: SMK TUNAS HARAPAN JAKARTA BARAT</td>
@@ -51,18 +48,18 @@
                             <th scope="col">#</th>
                             <th scope="col">Nama </th>
                             <th scope="col">Kelas</th>
-                            <th scope="col">Nilai PG</th>
+                            <th scope="col">Nilai</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="text-uppercase">
                             <?php
                             $no = 1;
                             foreach ($rekap as $row) {
                             ?>
                                 <td><?php echo $no++; ?></td>
                                 <td><?= $row['firstname'] ?></td>
-                                <td><?= $row['kelas'] ?></td>
+                                <td><?= $row['nama_kelas'] ?></td>
                                 <td><?= round($row['nilai'], 2); ?></td>
                         </tr>
                     <?php } ?>

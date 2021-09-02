@@ -2,7 +2,6 @@
     <h4 class="text-center font-weight-bold">Jadwal Ujian</h4>
 </div>
 
-
 <?= $this->session->flashdata('pesan') ?>
 <div class="row mt-2">
     <div class="col-md">
@@ -32,7 +31,7 @@
                                         <h4 class="badge badge-primary"><?= $row['sortorder']; ?></h4>
                                     </td>
                                     <td>
-                                        <h4 class="badge badge-primary">UJIAN KENAIKAN KELAS</h4>
+                                        <h4 class="badge badge-primary">UJIAN TENGAH SEMESTER GANJIL 2021/202</h4>
                                     </td>
                                     <td>
                                         <h4 class="badge badge-info text-uppercase"><?= $row['fullname']; ?></h4>

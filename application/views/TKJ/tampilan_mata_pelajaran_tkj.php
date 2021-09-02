@@ -2,8 +2,6 @@
     <h4 class="text-center font-weight-bold">Mata Pelajaran</h4>
 </div>
 
-
-
 <div class="row mt-2">
     <div class="col-md">
         <div class="card">
@@ -26,7 +24,7 @@
                                 ?>
                                     <td class="text-center"><?= $no++ ?></td>
                                     <td class="text-center"><?= $row['sortorder'] ?></td>
-                                    <td class="text-center font-weight-bold">UJIAN KENAIKAN KELAS</td>
+                                    <td class="text-center font-weight-bold text-uppercase">penilaian tengah semester ganjil 2021/2022</td>
                                     <td class="font-weight-bold"><?= $row['fullname'] ?></td>
                             </tr>
                         <?php } ?>

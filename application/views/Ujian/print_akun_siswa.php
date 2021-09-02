@@ -17,7 +17,7 @@
     <div class="container">
         <h2 class="text-center text-uppercase font-weight-bold">akun siswa cbt</h2>
         <h2 class="text-center text-uppercase font-weight-bold">smk tunas harapan</h2>
-        <h2 class="text-center text-uppercase font-weight-bold">penilaian tengah semester</h2>
+        <h2 class="text-center text-uppercase font-weight-bold">UJIAN TENGAH SEMESTER GANJIL 2021/202</h2>
         <h3>Kelas : <?= $header['nama_kelas'] ?></h3>
         <hr style="border-top: 5px dashed black;">
         <br>
@@ -38,7 +38,7 @@
                     foreach ($siswa as $row) {
                     ?>
                         <td><?php echo $no++; ?></td>
-                        <td><?= $row['nama_siswa'] ?></td>
+                        <td class="text-uppercase"><?= $row['nama_siswa'] ?></td>
                         <td><?= $row['nama_kelas'] ?></td>
                         <td><?= $row['username'] ?></td>
                         <td><?= $row['password'] ?></td>

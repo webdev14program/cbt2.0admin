@@ -78,9 +78,11 @@ class Model_siswa extends CI_Model
     public function dataSiswaAKL()
     {
         $sql = "SELECT * FROM `a_siswa`
+                INNER JOIN a_kelas
+                on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
-                where kelas LIKE '%AKL%'";
+                WHERE a_siswa.jurusan LIKE '%akl%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -88,9 +90,11 @@ class Model_siswa extends CI_Model
     public function dataSiswaBDP()
     {
         $sql = "SELECT * FROM `a_siswa`
+                INNER JOIN a_kelas
+                on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
-                where kelas LIKE '%BDP%'";
+                WHERE a_siswa.jurusan LIKE '%bdp%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -98,9 +102,11 @@ class Model_siswa extends CI_Model
     public function dataSiswaOTKP()
     {
         $sql = "SELECT * FROM `a_siswa`
+                INNER JOIN a_kelas
+                on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
-                where kelas LIKE '%OTKP%'";
+                WHERE a_siswa.jurusan LIKE '%otkp%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -108,9 +114,11 @@ class Model_siswa extends CI_Model
     public function dataSiswaTKJ()
     {
         $sql = "SELECT * FROM `a_siswa`
+                INNER JOIN a_kelas
+                on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
-                where kelas LIKE '%TKJ%'";
+                WHERE a_siswa.jurusan LIKE '%tkj%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

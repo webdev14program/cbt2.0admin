@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col">
                         <h3 class="text-white  font-italic font-weight-bold"><?= $mapel_akl ?></h3>
-                        <h4 class="text-white  font-italic font-weight-bold">Mapel</h4>
+                        <h4 class="text-white  font-italic font-weight-bold">Mapel AKL</h4>
                     </div>
 
                 </div>

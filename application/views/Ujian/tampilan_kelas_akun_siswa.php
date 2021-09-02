@@ -15,6 +15,7 @@
                                 <th scope="col">Kelas</th>
                                 <th scope="col">Kode Jurusan</th>
                                 <th scope="col">Jurusan</th>
+                                <th scope="col">Total Siswa</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -25,10 +26,11 @@
                                 foreach ($kelas as $row) {
                                 ?>
                                     <td><?php echo $no++; ?></td>
-                                    <td class="text-center"><?= $row['id_kelas'] ?></td>
-                                    <td class="text-center"><?= $row['kelas'] ?></td>
+                                    <td class="text-center text-uppercase font-weight-bold"><?= $row['id_kelas'] ?></td>
+                                    <td class="text-center text-uppercase font-weight-bold"><?= $row['kelas'] ?></td>
                                     <td class="text-center"><?= $row['kode'] ?></td>
                                     <td><?= $row['jurusan'] ?></td>
+                                    <td class="text-center text-uppercase font-weight-bold"><?= $row['jumlah_siswa'] ?> Siswa</td>
                                     <td class="text-center text-uppercase font-weight-bold"><a class="btn btn-success btn-sm" href="<?= base_url() ?>Dashboard/print_akun/<?= $row['id_kelas'] ?>" target="_blank"><i class="fas fa-print"></i> cetak</a> </td>
                             </tr>
                         <?php } ?>
