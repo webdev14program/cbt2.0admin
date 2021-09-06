@@ -12,6 +12,7 @@ class Dashboard_otkp extends CI_Controller
         $isi['kelasOTKP'] = $this->Model_kelas->countKelasOTKP();
         $isi['ujianOTKP'] = $this->Model_ujian->countUjianOTKP();
         $isi['mapel_otkp'] = $this->Model_mapel->countMapelOTKP();
+        $isi['ujian_hari_ini'] = $this->Model_ujian->ujian_hari_ini_otkp();
 
         $isi2['title'] = 'CBT | Administrator';
         $isi['content'] = 'OTKP/tampilan_home';

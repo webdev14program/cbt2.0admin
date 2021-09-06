@@ -13,6 +13,7 @@ class Dashboard_tkj extends CI_Controller
         $isi['kelasTKJ'] = $this->Model_kelas->countKelasTKJ();
         $isi['ujianTKJ'] = $this->Model_ujian->countUjianTKJ();
         $isi['mapel_tkj'] = $this->Model_mapel->countMapelTKJ();
+        $isi['ujian_hari_ini'] = $this->Model_ujian->ujian_hari_ini_tkj();
 
         $isi2['title'] = 'CBT | Administrator';
         $isi['content'] = 'TKJ/tampilan_home';

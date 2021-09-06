@@ -12,6 +12,7 @@ class Dashboard_bdp extends CI_Controller
         $isi['kelasBDP'] = $this->Model_kelas->countKelasBDP();
         $isi['ujiaBDP'] = $this->Model_ujian->countUjianBDP();
         $isi['mapel_bdp'] = $this->Model_mapel->countMapelBDP();
+        $isi['ujian_hari_ini'] = $this->Model_ujian->ujian_hari_ini_bdp();
 
         $isi2['title'] = 'CBT | Administrator';
         $isi['content'] = 'BDP/tampilan_home';

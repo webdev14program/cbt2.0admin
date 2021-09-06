@@ -45,6 +45,41 @@ class Model_ujian extends CI_Model
         $query = $this->db->query($sql);
         return $query->row()->ujian_tkj;
     }
+    public function ujian_hari_ini()
+    {
+        $sql = "SELECT * FROM `cbtonline_course`
+                WHERE cbtonline_course.visible='1' AND cbtonline_course.sortorder>1;";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function ujian_hari_ini_akl()
+    {
+        $sql = "SELECT * FROM `cbtonline_course`
+                WHERE cbtonline_course.visible='1' AND cbtonline_course.fullname LIKE '%akl%';";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function ujian_hari_ini_bdp()
+    {
+        $sql = "SELECT * FROM `cbtonline_course`
+                WHERE cbtonline_course.visible='1' AND cbtonline_course.fullname LIKE '%bdp%';";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function ujian_hari_ini_otkp()
+    {
+        $sql = "SELECT * FROM `cbtonline_course`
+                WHERE cbtonline_course.visible='1' AND cbtonline_course.fullname LIKE '%otkp%';";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function ujian_hari_ini_tkj()
+    {
+        $sql = "SELECT * FROM `cbtonline_course`
+                WHERE cbtonline_course.visible='1' AND cbtonline_course.fullname LIKE '%tkj%';";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 
     public function jadwalUjian()
     {
@@ -117,14 +152,16 @@ class Model_ujian extends CI_Model
 
     public function statusPeserta()
     {
-        $sql = "SELECT * FROM `cbtonline_quiz_attempts`
+        $sql = "SELECT *, a_kelas.kelas as nama_kelas FROM `cbtonline_quiz_attempts`
                 INNER JOIN cbtonline_user
                 on cbtonline_quiz_attempts.userid=cbtonline_user.id
                 INNER JOIN cbtonline_quiz
                 ON cbtonline_quiz_attempts.quiz=cbtonline_quiz.id
                 INNER JOIN a_siswa
                 ON cbtonline_user.username=a_siswa.username  
-                ORDER BY `cbtonline_quiz_attempts`.`timefinish`  ASC";
+                INNER JOIN a_kelas
+                ON a_siswa.kelas=a_kelas.id
+                ORDER BY `cbtonline_quiz_attempts`.`timefinish`  ASC;";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

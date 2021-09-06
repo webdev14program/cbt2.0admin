@@ -13,6 +13,7 @@ class Dashboard_akl extends CI_Controller
         $isi['kelasAKL'] = $this->Model_kelas->countKelasAKL();
         $isi['ujiaAKL'] = $this->Model_ujian->countUjianAKL();
         $isi['mapel_akl'] = $this->Model_mapel->countMapelAKL();
+        $isi['ujian_hari_ini'] = $this->Model_ujian->ujian_hari_ini_akl();
 
         $isi2['title'] = 'CBT | Administrator';
         $isi['content'] = 'AKL/tampilan_home';
