@@ -13,6 +13,7 @@
                         <thead>
                             <tr class="text-center">
                                 <th scope="col">#</th>
+                                <th scope="col">ID Kelas</th>
                                 <th scope="col">Kelas</th>
                                 <th scope="col">Kode Jurusan</th>
                                 <th scope="col">Jurusan</th>
@@ -25,6 +26,7 @@
                                 foreach ($kelas as $row) {
                                 ?>
                                     <td><?php echo $no++; ?></td>
+                                    <td class="text-center"><?= $row['id_kelas'] ?></td>
                                     <td class="text-center"><?= $row['kelas'] ?></td>
                                     <td class="text-center"><?= $row['kode'] ?></td>
                                     <td><?= $row['jurusan'] ?></td>

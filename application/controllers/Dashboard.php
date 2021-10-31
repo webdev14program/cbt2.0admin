@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller
         $isi['mapel'] = $this->Model_mapel->countMapel();
         $isi['ujian'] = $this->Model_ujian->countUjian();
         // Jurusan
-
+ 
         $isi['akl'] = $this->Model_siswa->countAKL();
         $isi['bdp'] = $this->Model_siswa->countBDP();
         $isi['otkp'] = $this->Model_siswa->countOTKP();
@@ -40,7 +40,7 @@ class Dashboard extends CI_Controller
     public function kelas()
     {
         $this->Model_keamanan->getKeamanan();
-        $isi['kelas'] = $this->Model_kelas->dataKelas();
+        $isi['kelas'] = $this->Model_kelas->dataKelasMaster();
 
         $isi2['title'] = 'CBT | Administrator';
         $isi['content'] = 'tampilan_kelas';

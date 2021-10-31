@@ -26,7 +26,7 @@
                                 ?>
                                     <td class="text-center"><?= $no++ ?></td>
                                     <td class="text-center"><?= $row['sortorder'] ?></td>
-                                    <td class="text-center text-uppercase font-weight-bold">pts (semester Ganjil 2021/2022)</td>
+                                    <td class="text-center text-uppercase font-weight-bold">pas (semester Ganjil 2021/2022)</td>
                                     <td class="font-weight-bold "><?= $row['fullname'] ?></td>
                             </tr>
                         <?php } ?>

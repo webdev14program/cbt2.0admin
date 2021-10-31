@@ -23,7 +23,7 @@
                     <tbody>
                         <tr>
                             <td>JENIS UJIAN</td>
-                            <td class="font-weight-bold">: UJIAN TENGAH SEMESTER GANJIL 2021/2022 </td>
+                            <td class="font-weight-bold">: UJIAN AKHIR SEMESTER GANJIL 2021/2022 </td>
                         </tr>
                         <tr>
                             <td>MATA PELAJARAN</td>

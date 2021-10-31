@@ -12,32 +12,32 @@ class Model_siswa extends CI_Model
 
     public function countAKL()
     {
-        $sql = "SELECT COUNT(*) as akl FROM `cbtonline_user`
-                WHERE lastname LIKE '%(X AKL%' OR  lastname LIKE '%(XI AKL%' OR  lastname LIKE '%(XII AKL%'";
+        $sql = "SELECT COUNT(*) AS akl FROM `a_siswa`
+                WHERE a_siswa.jurusan='AKL';";
         $query = $this->db->query($sql);
         return $query->row()->akl;
     }
 
     public function countOTKP()
     {
-        $sql = "SELECT COUNT(*) as otkp FROM `cbtonline_user`
-                WHERE lastname LIKE '%(X OTKP%' OR  lastname LIKE '%(XI OTKP%' OR  lastname LIKE '%(XII OTKP%'";
+        $sql = "SELECT COUNT(*) AS otkp FROM `a_siswa`
+WHERE a_siswa.jurusan='otkp';";
         $query = $this->db->query($sql);
         return $query->row()->otkp;
     }
 
     public function countTKJ()
     {
-        $sql = "SELECT COUNT(*) as tkj FROM `cbtonline_user`
-                WHERE lastname LIKE '%(X TKJ%' OR  lastname LIKE '%(XI TKJ%' OR  lastname LIKE '%(XII TKJ%'";
+        $sql = "SELECT COUNT(*) AS tkj FROM `a_siswa`
+WHERE a_siswa.jurusan='tkj';";
         $query = $this->db->query($sql);
         return $query->row()->tkj;
     }
 
     public function countBDP()
     {
-        $sql = "SELECT COUNT(*) as bdp FROM `cbtonline_user`
-                WHERE lastname LIKE '%(X BDP%' OR  lastname LIKE '%(XI BDP%' OR  lastname LIKE '%(XII BDP%'";
+        $sql = "SELECT COUNT(*) AS bdp FROM `a_siswa`
+WHERE a_siswa.jurusan='bdp';";
         $query = $this->db->query($sql);
         return $query->row()->bdp;
     }
