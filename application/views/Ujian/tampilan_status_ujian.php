@@ -30,7 +30,7 @@
                     foreach ($ujian_hari_ini as $row) {
                     ?>
                         <td><?= $no++ ?></td>
-                        <td class="  text-uppercase">uts ganjil 2021/2022</td>
+                        <td class="  text-uppercase">pas ganjil 2021/2022</td>
                         <td class=""><?= $row['fullname'] ?></td>
                         <td class="text-center">OPEN</td>
                 </tr>

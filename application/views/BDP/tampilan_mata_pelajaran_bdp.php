@@ -26,7 +26,7 @@
                                 ?>
                                     <td class="text-center"><?= $no++ ?></td>
                                     <td class="text-center"><?= $row['sortorder'] ?></td>
-                                    <td class="text-center font-weight-bold text-uppercase">penilaian tengah semester ganjil 2021/2022</td>
+                                    <td class="text-center font-weight-bold text-uppercase">penilaian AKHIR semester ganjil 2021/2022</td>
                                     <td class="font-weight-bold"><?= $row['fullname'] ?></td>
                             </tr>
                         <?php } ?>
