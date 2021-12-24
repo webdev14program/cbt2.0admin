@@ -12,8 +12,8 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama Siswa</th>
-                                <th>Jurusan</th>
                                 <th>Kelas</th>
+                                <th>Ruang</th>
                                 <th>Username</th>
                                 <th>Password</th>
                             </tr>
@@ -26,8 +26,8 @@
                                 ?>
                                     <td><?php echo $no++; ?></td>
                                     <td><?= $row['nama_siswa']; ?></td>
-                                    <td><?= $row['jurusan']; ?></td>
                                     <td><?= $row['nama_kelas']; ?></td>
+                                    <td><?= $row['nama_ruang']; ?></td>
                                     <td><?= $row['username'] ?></td>
                                     <td><?= $row['password'] ?></td>
                             </tr>

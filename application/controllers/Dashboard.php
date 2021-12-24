@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller
         $isi['mapel'] = $this->Model_mapel->countMapel();
         $isi['ujian'] = $this->Model_ujian->countUjian();
         // Jurusan
- 
+
         $isi['akl'] = $this->Model_siswa->countAKL();
         $isi['bdp'] = $this->Model_siswa->countBDP();
         $isi['otkp'] = $this->Model_siswa->countOTKP();
@@ -60,6 +60,19 @@ class Dashboard extends CI_Controller
         $this->load->view('tampilan_dashboard', $isi);
         $this->load->view('templates/footer');
     }
+
+    public function ruang_ujian()
+    {
+        $this->Model_keamanan->getKeamanan();
+        $isi['ruang'] = $this->Model_ruang->dataRuang();
+
+        $isi2['title'] = 'CBT | Administrator';
+        $isi['content'] = 'tampilan_ruang_ujian';
+        $this->load->view('templates/header', $isi2);
+        $this->load->view('tampilan_dashboard', $isi);
+        $this->load->view('templates/footer');
+    }
+
 
     public function siswa()
     {

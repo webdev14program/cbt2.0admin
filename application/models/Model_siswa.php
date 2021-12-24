@@ -21,7 +21,7 @@ class Model_siswa extends CI_Model
     public function countOTKP()
     {
         $sql = "SELECT COUNT(*) AS otkp FROM `a_siswa`
-WHERE a_siswa.jurusan='otkp';";
+                WHERE a_siswa.jurusan='otkp';";
         $query = $this->db->query($sql);
         return $query->row()->otkp;
     }
@@ -29,7 +29,7 @@ WHERE a_siswa.jurusan='otkp';";
     public function countTKJ()
     {
         $sql = "SELECT COUNT(*) AS tkj FROM `a_siswa`
-WHERE a_siswa.jurusan='tkj';";
+                WHERE a_siswa.jurusan='tkj';";
         $query = $this->db->query($sql);
         return $query->row()->tkj;
     }
@@ -37,18 +37,21 @@ WHERE a_siswa.jurusan='tkj';";
     public function countBDP()
     {
         $sql = "SELECT COUNT(*) AS bdp FROM `a_siswa`
-WHERE a_siswa.jurusan='bdp';";
+                WHERE a_siswa.jurusan='bdp';";
         $query = $this->db->query($sql);
         return $query->row()->bdp;
     }
 
     public function dataSiswa()
     {
-        $sql = "SELECT a_siswa.*,a_kelas.*,a_jurusan.*,a_kelas.kelas AS nama_kelas FROM `a_siswa`
+        $sql = "SELECT a_siswa.*,a_kelas.*,a_jurusan.*,a_ruang.*,a_kelas.kelas AS nama_kelas FROM `a_siswa`
                 INNER JOIN a_kelas
                 on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
-                ON a_siswa.jurusan=a_jurusan.kode";
+                ON a_siswa.jurusan=a_jurusan.kode
+                INNER JOIN a_ruang
+                ON a_siswa.ruangan=a_ruang.id_ruang
+                ORDER BY a_ruang.nama_ruang ASC;";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

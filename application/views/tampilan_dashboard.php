@@ -39,6 +39,7 @@
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/jurusan">Master Jurusan</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/kelas">Master Kelas</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/mata_pelajaran">Master Mata Pelajaran</a>
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/ruang_ujian">Master Ruang Ujian</a>
                 </div>
             </div>
         </li>
