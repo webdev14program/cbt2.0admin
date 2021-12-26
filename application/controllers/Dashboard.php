@@ -119,6 +119,15 @@ class Dashboard extends CI_Controller
         $this->load->view('Ujian/print_akun_siswa', $isi);
     }
 
+    public function print_kartu($id_kelas)
+    {
+        $this->Model_keamanan->getKeamanan();
+        $isi['header'] = $this->Model_siswa->header_akun_siswa($id_kelas);
+        $isi['siswa'] = $this->Model_siswa->akun_siswa($id_kelas);
+        $isi['title'] = 'CBT | Administrator';
+        $this->load->view('Ujian/print_kartu_siswa', $isi);
+    }
+
     public function status_ujian()
     {
         $isi2['title'] = 'CBT | Administrator';
