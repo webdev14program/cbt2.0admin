@@ -1,5 +1,5 @@
 <div class="alert alert-success" role="alert">
-    <h4 class="text-center font-weight-bold text-uppercase">Cetak Akun Peserta, Kartu Peserat, Nomor Meja</h4>
+    <h4 class="text-center font-weight-bold text-uppercase">Cetak Akun Peserta</h4>
 </div>
 
 <div class="row mt-2">
@@ -16,8 +16,8 @@
                                 <th scope="col">Jurusan</th>
                                 <th scope="col">Total Siswa</th>
                                 <th scope="col">Akun Peserta</th>
-                                <th scope="col">Kartu Peserta</th>
-                                <th scope="col">Nomor Meja</th>
+                                <!-- <th scope="col">Kartu Peserta</th>
+                                <th scope="col">Nomor Meja</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -32,8 +32,8 @@
                                     <td><?= $row['jurusan'] ?></td>
                                     <td class="text-center text-uppercase font-weight-bold"><?= $row['jumlah_siswa'] ?> Siswa</td>
                                     <td class="text-center text-uppercase font-weight-bold"><a class="btn btn-success btn-sm" href="<?= base_url() ?>Dashboard/print_akun/<?= $row['id_kelas'] ?>" target="_blank"><i class="fas fa-print"></i> cetak</a> </td>
-                                    <td class="text-center text-uppercase font-weight-bold"><a class="btn btn-danger btn-sm" href="<?= base_url() ?>Dashboard/print_kartu/<?= $row['id_kelas'] ?>" target="_blank"><i class="fas fa-print"></i> cetak</a> </td>
-                                    <td class="text-center text-uppercase font-weight-bold"><a class="btn btn-primary btn-sm" href="<?= base_url() ?>Dashboard/print_akun/<?= $row['id_kelas'] ?>" target="_blank"><i class="fas fa-print"></i> cetak</a> </td>
+                                    <!-- <td class="text-center text-uppercase font-weight-bold"><a class="btn btn-danger btn-sm" href="<?= base_url() ?>Dashboard/print_kartu/<?= $row['id_kelas'] ?>" target="_blank"><i class="fas fa-print"></i> cetak</a> </td>
+                                    <td class="text-center text-uppercase font-weight-bold"><a class="btn btn-primary btn-sm" href="<?= base_url() ?>Dashboard/print_akun/<?= $row['id_kelas'] ?>" target="_blank"><i class="fas fa-print"></i> cetak</a> </td> -->
                             </tr>
                         <?php } ?>
                         </tbody>

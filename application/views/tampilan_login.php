@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="<?= base_url() ?>assets/images/logo.png" />
+    <link rel="icon" type="image/png" href="<?= base_url() ?>assets/images/Capture.ico" />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/login/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
@@ -35,13 +35,13 @@
 
     <div class="limiter">
         <div class="container-login100">
-            <div class="login100-more" style="background-image: url('https://smkth-jakbar.com/assets/images/1.jpg');"></div>
+            <div class="login100-more" style="background-size: cover; background-image: url('https://jalanmembara.files.wordpress.com/2018/10/img_20181029_0720351288172088.png');"></div>
 
             <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-                <h5 class="text-center"><img src="<?= base_url() ?>assets/images/logo.png" style="width: 200px;height: 200px;" alt="IMG"></h5>
+                <h5 class="text-center"><img src="<?= base_url() ?>assets/images/Capture.png" style="width: 300px;height: 200px;" alt="IMG"></h5>
                 <form class="login100-form validate-form mt-4" method="POST" action="<?= base_url() ?>Login/proses_login">
-                    <span class="login100-form-title p-b-59 text-center">
-                        CBT SMK TUNAS HARAPAN <br> JAKARTA BARAT
+                    <span class="login100-form-title p-b-59 text-center text-uppercase">
+                        CBT <?= $nama_sekolah['nama_sekolah'] ?>
                     </span>
                     <?= $this->session->flashdata('pesan'); ?>
                     <div class="wrap-input100 validate-input" data-validate="Name is required">

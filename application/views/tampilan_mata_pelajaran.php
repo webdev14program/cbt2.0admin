@@ -26,8 +26,8 @@
                                 ?>
                                     <td class="text-center"><?= $no++ ?></td>
                                     <td class="text-center"><?= $row['sortorder'] ?></td>
-                                    <td class="text-center text-uppercase font-weight-bold">UAS (semester Genap 2021/2022)</td>
-                                    <td class="font-weight-bold "><?= $row['fullname'] ?></td>
+                                    <td class="text-center text-uppercase font-weight-bold">Computer Based Test</td>
+                                    <td class="font-weight-bold text-uppercase"><?= $row['fullname'] ?></td>
                             </tr>
                         <?php } ?>
                         </tbody>

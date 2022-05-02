@@ -12,8 +12,8 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama Siswa</th>
+                                <th>Jurusan</th>
                                 <th>Kelas</th>
-                                <th>Ruang</th>
                                 <th>Username</th>
                                 <th>Password</th>
                             </tr>
@@ -24,12 +24,12 @@
                                 $no = 1;
                                 foreach ($siswa as $row) {
                                 ?>
-                                    <td><?php echo $no++; ?></td>
+                                    <td class="text-center"><?php echo $no++; ?></td>
                                     <td><?= $row['nama_siswa']; ?></td>
-                                    <td><?= $row['nama_kelas']; ?></td>
-                                    <td><?= $row['nama_ruang']; ?></td>
-                                    <td><?= $row['username'] ?></td>
-                                    <td><?= $row['password'] ?></td>
+                                    <td class="text-center"><?= $row['jurusan']; ?></td>
+                                    <td class="text-center"><?= $row['kelas']; ?></td>
+                                    <td class="text-center"><?= $row['username'] ?></td>
+                                    <td class="text-center"><?= $row['password'] ?></td>
                             </tr>
                         <?php } ?>
                         </tbody>

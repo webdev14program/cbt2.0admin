@@ -6,6 +6,7 @@ class Login extends CI_Controller
 
     public function index()
     {
+        $isi['nama_sekolah'] = $this->Model_setting->identitas_sekolah();
         $isi['title'] = 'Login Administrator';
         $this->load->view('tampilan_login', $isi);
     }

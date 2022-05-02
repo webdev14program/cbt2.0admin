@@ -5,7 +5,7 @@ class Model_mapel extends CI_Model
 {
     public function countMapel()
     {
-        $sql = "SELECT COUNT(*) AS mapel FROM `cbtonline_course`
+        $sql = "SELECT COUNT(*) AS mapel FROM `cbt_course`
                 WHERE  category>0;";
         $query = $this->db->query($sql);
         return $query->row()->mapel;
@@ -13,7 +13,7 @@ class Model_mapel extends CI_Model
 
     public function countMapelAKL()
     {
-        $sql = "SELECT COUNT(*) AS mapel_akl FROM `cbtonline_course`
+        $sql = "SELECT COUNT(*) AS mapel_akl FROM `cbt_course`
                 WHERE format='singleactivity' AND fullname LIKE '%AKL%'";
         $query = $this->db->query($sql);
         return $query->row()->mapel_akl;
@@ -21,7 +21,7 @@ class Model_mapel extends CI_Model
 
     public function countMapelBDP()
     {
-        $sql = "SELECT COUNT(*) AS mapel_bdp FROM `cbtonline_course`
+        $sql = "SELECT COUNT(*) AS mapel_bdp FROM `cbt_course`
                 WHERE format='singleactivity' AND fullname LIKE '%BDP%'";
         $query = $this->db->query($sql);
         return $query->row()->mapel_bdp;
@@ -29,7 +29,7 @@ class Model_mapel extends CI_Model
 
     public function countMapelOTKP()
     {
-        $sql = "SELECT COUNT(*) AS mapel_otkp FROM `cbtonline_course`
+        $sql = "SELECT COUNT(*) AS mapel_otkp FROM `cbt_course`
                 WHERE format='singleactivity' AND fullname LIKE '%OTKP%'";
         $query = $this->db->query($sql);
         return $query->row()->mapel_otkp;
@@ -37,7 +37,7 @@ class Model_mapel extends CI_Model
 
     public function countMapelTKJ()
     {
-        $sql = "SELECT COUNT(*) AS mapel_tkj FROM `cbtonline_course`
+        $sql = "SELECT COUNT(*) AS mapel_tkj FROM `cbt_course`
                 WHERE format='singleactivity' AND fullname LIKE '%TKJ%'";
         $query = $this->db->query($sql);
         return $query->row()->mapel_tkj;
@@ -45,7 +45,7 @@ class Model_mapel extends CI_Model
 
     public function dataMapel()
     {
-        $sql = "SELECT *  FROM `cbtonline_course`
+        $sql = "SELECT *  FROM `cbt_course`
                 WHERE  category>0;";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -53,7 +53,7 @@ class Model_mapel extends CI_Model
 
     public function dataMapelAKL()
     {
-        $sql = "SELECT * FROM `cbtonline_course`
+        $sql = "SELECT * FROM `cbt_course`
                 WHERE format='singleactivity' AND fullname LIKE '%AKL%'";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -61,7 +61,7 @@ class Model_mapel extends CI_Model
 
     public function dataMapelBDP()
     {
-        $sql = "SELECT * FROM `cbtonline_course`
+        $sql = "SELECT * FROM `cbt_course`
                 WHERE format='singleactivity' AND fullname LIKE '%BDP%'";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -69,7 +69,7 @@ class Model_mapel extends CI_Model
 
     public function dataMapelOTKP()
     {
-        $sql = "SELECT * FROM `cbtonline_course`
+        $sql = "SELECT * FROM `cbt_course`
                 WHERE format='singleactivity' AND fullname LIKE '%OTKP%'";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -77,7 +77,7 @@ class Model_mapel extends CI_Model
 
     public function dataMapelTKJ()
     {
-        $sql = "SELECT * FROM `cbtonline_course`
+        $sql = "SELECT * FROM `cbt_course`
                 WHERE format='singleactivity' AND fullname LIKE '%TKJ%'";
         $query = $this->db->query($sql);
         return $query->result_array();

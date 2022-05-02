@@ -16,8 +16,7 @@
 <body>
     <div class="container">
         <h2 class="text-center text-uppercase font-weight-bold">akun siswa cbt</h2>
-        <h2 class="text-center text-uppercase font-weight-bold">smk tunas harapan</h2>
-        <h2 class="text-center text-uppercase font-weight-bold">UJIAN AKHIR SEMESTER GANJIL 2021/202</h2>
+        <h2 class="text-center text-uppercase font-weight-bold"><?= $nama_sekolah['nama_sekolah'] ?></h2>
         <h3>Kelas : <?= $header['nama_kelas'] ?></h3>
         <hr style="border-top: 5px dashed black;">
         <br>
