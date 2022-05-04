@@ -1,6 +1,6 @@
 <div class="alert alert-success" role="alert">
     <h2 class="text-center font-weight-bold">Administrator Computer Based Test</h2>
-    <h2 class="text-center font-weight-bold text-uppercase"><?= $nama_sekolah['nama_sekolah'] ?></h2>
+    <h2 class="text-center font-weight-bold text-uppercase"> smk tunas harapan</h2>
     <h2 class="text-center font-weight-bold">Admin Utama</h2>
 </div>
 
@@ -125,15 +125,15 @@
                     <tbody>
                         <tr>
                             <td>Nama Sekolah </td>
-                            <td class="text-uppercase">: <?= $nama_sekolah['nama_sekolah'] ?></td>
+                            <td class="text-uppercase">: smks tunas harapan </td>
                         </tr>
                         <tr>
                             <td>NPSN </td>
-                            <td class="text-uppercase">: <?= $nama_sekolah['npsn'] ?></td>
+                            <td class="text-uppercase">: 20101484</td>
                         </tr>
                         <tr>
                             <td>Alamat </td>
-                            <td class="text-uppercase">: <?= $nama_sekolah['alamat_sekolah'] ?></td>
+                            <td class="text-uppercase">: JL. KOMP. BNI 46 PESING</td>
                         </tr>
                     </tbody>
                 </table>

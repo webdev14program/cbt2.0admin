@@ -71,6 +71,19 @@ class Dashboard_akl extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function filter_status_peserta()
+    {
+        $this->Model_keamanan->getKeamanan();
+        $isi['status'] = $this->Model_ujian->FilterstatusPesertaAKL();
+
+
+        $isi2['title'] = 'CBT | Administrator';
+        $isi['content'] = 'AKL/Ujian/filter_tampilan_status_peserta';
+        $this->load->view('templates/header', $isi2);
+        $this->load->view('AKL/tampilan_dashboard', $isi);
+        $this->load->view('templates/footer');
+    }
+
     public function rekap_nilai_akl()
     {
         $this->Model_keamanan->getKeamanan();

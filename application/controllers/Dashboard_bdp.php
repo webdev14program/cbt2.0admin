@@ -72,6 +72,19 @@ class Dashboard_bdp extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function filter_status_peserta()
+    {
+        $this->Model_keamanan->getKeamanan();
+        $isi['status'] = $this->Model_ujian->FilterstatusPesertaBDP();
+
+
+        $isi2['title'] = 'CBT | Administrator';
+        $isi['content'] = 'BDP/Ujian/filter_tampilan_status_peserta';
+        $this->load->view('templates/header', $isi2);
+        $this->load->view('BDP/tampilan_dashboard', $isi);
+        $this->load->view('templates/footer');
+    }
+
     public function rekap_nilai_bdp()
     {
         $this->Model_keamanan->getKeamanan();

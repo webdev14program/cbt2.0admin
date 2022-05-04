@@ -69,6 +69,7 @@
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard_otkp/status_peserta_otkp">Status Peserta</a>
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard_otkp/filter_status_peserta">Filter Status Peserta</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard_otkp/rekap_nilai_otkp">Cetak Daftar Nilai</a>
                 </div>
             </div>

@@ -32,7 +32,7 @@
                                         <h4 class="badge badge-primary"><?= $row['sortorder']; ?></h4>
                                     </td>
                                     <td>
-                                        <h4 class="badge badge-primary">UJIAN AKHIR SEMESTER GANJIL 2021/202</h4>
+                                        <h4 class="badge badge-primary">computer based test</h4>
                                     </td>
                                     <td>
                                         <h4 class="badge badge-info text-uppercase"><?= $row['fullname']; ?></h4>

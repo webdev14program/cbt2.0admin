@@ -73,6 +73,19 @@ class Dashboard_tkj extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function filter_status_peserta()
+    {
+        $this->Model_keamanan->getKeamanan();
+        $isi['status'] = $this->Model_ujian->FilterstatusPesertaTKJ();
+
+
+        $isi2['title'] = 'CBT | Administrator';
+        $isi['content'] = 'TKJ/Ujian/filter_tampilan_status_peserta';
+        $this->load->view('templates/header', $isi2);
+        $this->load->view('TKJ/tampilan_dashboard', $isi);
+        $this->load->view('templates/footer');
+    }
+
     public function rekap_nilai_tkj()
     {
         $this->Model_keamanan->getKeamanan();

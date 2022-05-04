@@ -74,23 +74,10 @@
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/akun_peserta">Akun Peserta</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/status_ujian">Status Ujian</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/status_peserta">Status Peserta</a>
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/filter_status_peserta">Filter Status Peserta</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/rekap_nilai">Cetak Daftar Nilai</a>
                 </div>
             </div>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Setting
-        </div>
-
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url() ?>Dashboard/jadwal_ujian">
-                <i class="fas fa-cog"></i>
-                <span>Setting CBT</span></a>
         </li>
 
         <hr class="sidebar-divider">
@@ -149,7 +136,7 @@
         <footer class="sticky-footer bg-warning ">
             <div class="container my-auto">
                 <div class="copyright text-center text-white my-auto">
-                    <h5 class="text-center font-weight-bold text-uppercase">Copyright &copy; <?= $nama_sekolah['nama_sekolah'] ?></h5>
+                    <h5 class="text-center font-weight-bold text-uppercase">Copyright &copy; smk tunas harapan</h5>
                     <!-- <h5 class="text-center text-white font-weight-bold">Design By Rahmadika S Setiawan, S.Kom</h5> -->
                 </div>
             </div>

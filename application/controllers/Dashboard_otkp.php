@@ -72,6 +72,19 @@ class Dashboard_otkp extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function filter_status_peserta()
+    {
+        $this->Model_keamanan->getKeamanan();
+        $isi['status'] = $this->Model_ujian->FilterstatusPesertaOTKP();
+
+
+        $isi2['title'] = 'CBT | Administrator';
+        $isi['content'] = 'OTKP/Ujian/filter_tampilan_status_peserta';
+        $this->load->view('templates/header', $isi2);
+        $this->load->view('OTKP/tampilan_dashboard', $isi);
+        $this->load->view('templates/footer');
+    }
+
     public function rekap_nilai_otkp()
     {
         $this->Model_keamanan->getKeamanan();

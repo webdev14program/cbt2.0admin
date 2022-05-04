@@ -166,6 +166,115 @@ class Model_ujian extends CI_Model
         return $query->result_array();
     }
 
+    public function FilterstatusPeserta()
+    {
+        $sql = "SELECT cbt_quiz.name,a_kelas.kelas as nama_kelas,
+                count(IF(cbt_quiz_attempts.state='finished','Selesai',null)) AS selesai,
+                COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null)) AS masih_mengerjakan,
+                (count(IF(cbt_quiz_attempts.state='finished','Selesai',null))+COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null))) AS jumlah_mengerjakan
+                FROM `cbt_quiz_attempts`
+                INNER JOIN cbt_user
+                on cbt_quiz_attempts.userid=cbt_user.id
+                INNER JOIN cbt_quiz
+                ON cbt_quiz_attempts.quiz=cbt_quiz.id
+                INNER JOIN a_siswa
+                ON cbt_user.username=a_siswa.username  
+                INNER JOIN a_kelas
+                ON a_siswa.kelas=a_kelas.id
+                GROUP BY cbt_quiz.name,a_kelas.kelas
+                ORDER BY a_kelas.kelas ASC;";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function FilterstatusPesertaAKL()
+    {
+        $sql = "SELECT cbt_quiz.name,a_kelas.kelas as nama_kelas,
+                count(IF(cbt_quiz_attempts.state='finished','Selesai',null)) AS selesai,
+                COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null)) AS masih_mengerjakan,
+                (count(IF(cbt_quiz_attempts.state='finished','Selesai',null))+COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null))) AS jumlah_mengerjakan
+                FROM `cbt_quiz_attempts`
+                INNER JOIN cbt_user
+                on cbt_quiz_attempts.userid=cbt_user.id
+                INNER JOIN cbt_quiz
+                ON cbt_quiz_attempts.quiz=cbt_quiz.id
+                INNER JOIN a_siswa
+                ON cbt_user.username=a_siswa.username  
+                INNER JOIN a_kelas
+                ON a_siswa.kelas=a_kelas.id
+                WHERE a_kelas.kode='AKL'
+                GROUP BY cbt_quiz.name,a_kelas.kelas
+                ORDER BY a_kelas.kelas ASC;";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function FilterstatusPesertaBDP()
+    {
+        $sql = "SELECT cbt_quiz.name,a_kelas.kelas as nama_kelas,
+                count(IF(cbt_quiz_attempts.state='finished','Selesai',null)) AS selesai,
+                COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null)) AS masih_mengerjakan,
+                (count(IF(cbt_quiz_attempts.state='finished','Selesai',null))+COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null))) AS jumlah_mengerjakan
+                FROM `cbt_quiz_attempts`
+                INNER JOIN cbt_user
+                on cbt_quiz_attempts.userid=cbt_user.id
+                INNER JOIN cbt_quiz
+                ON cbt_quiz_attempts.quiz=cbt_quiz.id
+                INNER JOIN a_siswa
+                ON cbt_user.username=a_siswa.username  
+                INNER JOIN a_kelas
+                ON a_siswa.kelas=a_kelas.id
+                WHERE a_kelas.kode='BDP'
+                GROUP BY cbt_quiz.name,a_kelas.kelas
+                ORDER BY a_kelas.kelas ASC;";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function FilterstatusPesertaOTKP()
+    {
+        $sql = "SELECT cbt_quiz.name,a_kelas.kelas as nama_kelas,
+                count(IF(cbt_quiz_attempts.state='finished','Selesai',null)) AS selesai,
+                COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null)) AS masih_mengerjakan,
+                (count(IF(cbt_quiz_attempts.state='finished','Selesai',null))+COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null))) AS jumlah_mengerjakan
+                FROM `cbt_quiz_attempts`
+                INNER JOIN cbt_user
+                on cbt_quiz_attempts.userid=cbt_user.id
+                INNER JOIN cbt_quiz
+                ON cbt_quiz_attempts.quiz=cbt_quiz.id
+                INNER JOIN a_siswa
+                ON cbt_user.username=a_siswa.username  
+                INNER JOIN a_kelas
+                ON a_siswa.kelas=a_kelas.id
+                WHERE a_kelas.kode='OTKP'
+                GROUP BY cbt_quiz.name,a_kelas.kelas
+                ORDER BY a_kelas.kelas ASC;";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function FilterstatusPesertaTKJ()
+    {
+        $sql = "SELECT cbt_quiz.name,a_kelas.kelas as nama_kelas,
+                count(IF(cbt_quiz_attempts.state='finished','Selesai',null)) AS selesai,
+                COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null)) AS masih_mengerjakan,
+                (count(IF(cbt_quiz_attempts.state='finished','Selesai',null))+COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null))) AS jumlah_mengerjakan
+                FROM `cbt_quiz_attempts`
+                INNER JOIN cbt_user
+                on cbt_quiz_attempts.userid=cbt_user.id
+                INNER JOIN cbt_quiz
+                ON cbt_quiz_attempts.quiz=cbt_quiz.id
+                INNER JOIN a_siswa
+                ON cbt_user.username=a_siswa.username  
+                INNER JOIN a_kelas
+                ON a_siswa.kelas=a_kelas.id
+                WHERE a_kelas.kode='TKJ'
+                GROUP BY cbt_quiz.name,a_kelas.kelas
+                ORDER BY a_kelas.kelas ASC;";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function statusPesertaAKL()
     {
         $sql = "SELECT *, a_kelas.kelas as nama_kelas FROM `cbt_quiz_attempts`

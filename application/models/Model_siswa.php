@@ -120,4 +120,13 @@ INNER JOIN a_jurusan ON a_siswa.jurusan=a_jurusan.kode;";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+
+    function simpanSiswa($data = array())
+    {
+        $jumlah = count($data);
+
+        if ($jumlah > 0) {
+            $this->db->insert_batch('a_siswa', $data);
+        }
+    }
 }

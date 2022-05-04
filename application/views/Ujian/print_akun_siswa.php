@@ -15,11 +15,26 @@
 
 <body>
     <div class="container">
-        <h2 class="text-center text-uppercase font-weight-bold">akun siswa cbt</h2>
-        <h2 class="text-center text-uppercase font-weight-bold"><?= $nama_sekolah['nama_sekolah'] ?></h2>
-        <h3>Kelas : <?= $header['nama_kelas'] ?></h3>
-        <hr style="border-top: 5px dashed black;">
-        <br>
+        <div class="row" style="margin-top: 50px;">
+            <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 160px;height: 160px;margin-top: 20px;">
+            <div class="col-md mt-4">
+                <table class="table border">
+                    <tbody>
+                        <tr>
+                            <td class="font-weight-bold text-center text-uppercase">computer based test </td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold text-center text-uppercase">akun siswa</td>
+                        </tr>
+
+                        <tr>
+                            <td class="font-weight-bold text-center text-uppercase"><?= $header['kelas'] ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div><br>
+        <hr style="border-top: 2px dashed black;">
         <table class="table table-bordered text-uppercase">
             <thead>
                 <tr>
