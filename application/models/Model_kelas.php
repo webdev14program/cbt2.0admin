@@ -42,6 +42,14 @@ class Model_kelas extends CI_Model
         return $query->row()->kelas_tkj;
     }
 
+    public function countKelasDKV()
+    {
+        $sql = "SELECT count(*) AS kelas_dkv FROM `a_kelas`
+                WHERE kelas LIKE '%DKV%'";
+        $query = $this->db->query($sql);
+        return $query->row()->kelas_dkv;
+    }
+
     public function dataKelasMaster()
     {
         $sql = "SELECT  a_kelas.id AS id_kelas,a_kelas.*,a_jurusan.* FROM `a_kelas`

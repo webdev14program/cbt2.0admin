@@ -43,6 +43,14 @@ class Model_mapel extends CI_Model
         return $query->row()->mapel_tkj;
     }
 
+    public function countMapelDKV()
+    {
+        $sql = "SELECT COUNT(*) AS mapel_dkv FROM `cbt_course`
+                WHERE format='singleactivity' AND fullname LIKE '%dkv%'";
+        $query = $this->db->query($sql);
+        return $query->row()->mapel_dkv;
+    }
+
     public function dataMapel()
     {
         $sql = "SELECT *  FROM `cbt_course`
@@ -79,6 +87,14 @@ class Model_mapel extends CI_Model
     {
         $sql = "SELECT * FROM `cbt_course`
                 WHERE format='singleactivity' AND fullname LIKE '%TKJ%'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataMapelDKV()
+    {
+        $sql = "SELECT * FROM `cbt_course`
+                WHERE format='singleactivity' AND fullname LIKE '%DKV%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

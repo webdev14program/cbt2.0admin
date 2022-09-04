@@ -73,6 +73,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/akun_peserta">Akun Peserta</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/status_ujian">Status Ujian</a>
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/status_peserta_login">Status Login</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/status_peserta">Status Peserta</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/filter_status_peserta">Filter Status Peserta</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/rekap_nilai">Cetak Daftar Nilai</a>

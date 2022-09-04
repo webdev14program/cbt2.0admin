@@ -42,6 +42,14 @@ class Model_siswa extends CI_Model
         return $query->row()->bdp;
     }
 
+    public function countDKV()
+    {
+        $sql = "SELECT COUNT(*) AS dkv FROM `a_siswa`
+                WHERE a_siswa.jurusan='dkv';";
+        $query = $this->db->query($sql);
+        return $query->row()->dkv;
+    }
+
     public function dataSiswa()
     {
         $sql = "SELECT a_siswa.nama_siswa,a_jurusan.jurusan,a_kelas.kelas,a_siswa.username,a_siswa.password FROM `a_siswa` 
@@ -117,6 +125,18 @@ INNER JOIN a_jurusan ON a_siswa.jurusan=a_jurusan.kode;";
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
                 WHERE a_siswa.jurusan LIKE '%tkj%';";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataSiswaDKV()
+    {
+        $sql = "SELECT * FROM `a_siswa`
+                INNER JOIN a_kelas
+                on a_siswa.kelas=a_kelas.id
+                INNER JOIN a_jurusan
+                ON a_siswa.jurusan=a_jurusan.kode
+                WHERE a_siswa.jurusan LIKE '%dkv%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

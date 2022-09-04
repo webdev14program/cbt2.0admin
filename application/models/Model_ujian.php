@@ -45,6 +45,15 @@ class Model_ujian extends CI_Model
         $query = $this->db->query($sql);
         return $query->row()->ujian_tkj;
     }
+
+    public function countUjianDKV()
+    {
+        $sql = "SELECT COUNT(*) AS ujian_dkv FROM `cbt_quiz`
+                WHERE name LIKE '%dkv%'";
+        $query = $this->db->query($sql);
+        return $query->row()->ujian_dkv;
+    }
+
     public function ujian_hari_ini()
     {
         $sql = "SELECT * FROM `cbt_course`
@@ -77,6 +86,14 @@ class Model_ujian extends CI_Model
     {
         $sql = "SELECT * FROM `cbt_course`
                 WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%tkj%';";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function ujian_hari_ini_dkv()
+    {
+        $sql = "SELECT * FROM `cbt_course`
+                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%dkv%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -146,6 +163,30 @@ class Model_ujian extends CI_Model
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id
                 WHERE name LIKE '%TKJ%'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function jadwalUjianDKV()
+    {
+        $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_course.fullname,cbt_course.shortname,name,timelimit,
+                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
+                hour(FROM_UNIXTIME(timeopen)) as jam_awal,minute(FROM_UNIXTIME(timeopen)) as menit_awal,
+                hour(FROM_UNIXTIME(timeclose)) as jam_akhir,minute(FROM_UNIXTIME(timeclose)) as menit_akhir
+                FROM `cbt_quiz`
+                INNER JOIN cbt_course
+                ON cbt_quiz.course=cbt_course.id
+                WHERE name LIKE '%DKV%'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function statusPesertaLogin()
+    {
+        $sql = "SELECT cbt_sessions.id,cbt_user.firstname,cbt_user.lastname,cbt_sessions.firstip,FROM_UNIXTIME(cbt_sessions.timecreated) AS waktu_login FROM `cbt_sessions`
+                INNER JOIN cbt_user
+                ON cbt_sessions.userid=cbt_user.id
+                WHERE cbt_sessions.userid NOT IN ('2');";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

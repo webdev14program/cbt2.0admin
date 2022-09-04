@@ -6,7 +6,7 @@ class Login extends CI_Controller
 
     public function index()
     {
-        $isi['nama_sekolah'] = $this->Model_setting->identitas_sekolah();
+
         $isi['title'] = 'Login Administrator';
         $this->load->view('tampilan_login', $isi);
     }
@@ -36,6 +36,8 @@ class Login extends CI_Controller
                 redirect('Dashboard_otkp');
             } elseif ($sess_data['level'] == 'admintkj') {
                 redirect('Dashboard_tkj');
+            } elseif ($sess_data['level'] == 'admindkv') {
+                redirect('Dashboard_dkv');
             } else {
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                     Username dan Password salah
