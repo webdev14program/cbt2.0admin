@@ -25,7 +25,7 @@ class Model_ujian extends CI_Model
     public function countUjianBDP()
     {
         $sql = "SELECT COUNT(*) AS ujian_bdp FROM `cbt_quiz`
-                WHERE name LIKE '%BDP%'";
+                WHERE name LIKE '%PM%'";
         $query = $this->db->query($sql);
         return $query->row()->ujian_bdp;
     }
@@ -33,7 +33,7 @@ class Model_ujian extends CI_Model
     public function countUjianOTKP()
     {
         $sql = "SELECT COUNT(*) AS ujian_otkp FROM `cbt_quiz`
-                WHERE name LIKE '%OTKP%'";
+                WHERE name LIKE '%MPLB%'";
         $query = $this->db->query($sql);
         return $query->row()->ujian_otkp;
     }
@@ -41,7 +41,7 @@ class Model_ujian extends CI_Model
     public function countUjianTKJ()
     {
         $sql = "SELECT COUNT(*) AS ujian_tkj FROM `cbt_quiz`
-                WHERE name LIKE '%TKJ%'";
+                WHERE name LIKE '%TJKT%'";
         $query = $this->db->query($sql);
         return $query->row()->ujian_tkj;
     }
@@ -71,21 +71,21 @@ class Model_ujian extends CI_Model
     public function ujian_hari_ini_bdp()
     {
         $sql = "SELECT * FROM `cbt_course`
-                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%bdp%';";
+                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%PM%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
     public function ujian_hari_ini_otkp()
     {
         $sql = "SELECT * FROM `cbt_course`
-                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%otkp%';";
+                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%MPLB%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
     public function ujian_hari_ini_tkj()
     {
         $sql = "SELECT * FROM `cbt_course`
-                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%tkj%';";
+                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%TJKT%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -134,7 +134,7 @@ class Model_ujian extends CI_Model
                 FROM `cbt_quiz`
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id
-                WHERE name LIKE '%BDP%'";
+                WHERE name LIKE '%PM%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -148,7 +148,7 @@ class Model_ujian extends CI_Model
                 FROM `cbt_quiz`
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id
-                WHERE name LIKE '%OTKP%'";
+                WHERE name LIKE '%MPLB%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -162,7 +162,7 @@ class Model_ujian extends CI_Model
                 FROM `cbt_quiz`
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id
-                WHERE name LIKE '%TKJ%'";
+                WHERE name LIKE '%TJKT%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -265,7 +265,7 @@ class Model_ujian extends CI_Model
                 ON cbt_user.username=a_siswa.username  
                 INNER JOIN a_kelas
                 ON a_siswa.kelas=a_kelas.id
-                WHERE a_kelas.kode='BDP'
+                WHERE a_kelas.kode='PM'
                 GROUP BY cbt_quiz.name,a_kelas.kelas
                 ORDER BY a_kelas.kelas ASC;";
         $query = $this->db->query($sql);
@@ -287,7 +287,7 @@ class Model_ujian extends CI_Model
                 ON cbt_user.username=a_siswa.username  
                 INNER JOIN a_kelas
                 ON a_siswa.kelas=a_kelas.id
-                WHERE a_kelas.kode='OTKP'
+                WHERE a_kelas.kode='MPLB'
                 GROUP BY cbt_quiz.name,a_kelas.kelas
                 ORDER BY a_kelas.kelas ASC;";
         $query = $this->db->query($sql);
@@ -309,7 +309,7 @@ class Model_ujian extends CI_Model
                 ON cbt_user.username=a_siswa.username  
                 INNER JOIN a_kelas
                 ON a_siswa.kelas=a_kelas.id
-                WHERE a_kelas.kode='TKJ'
+                WHERE a_kelas.kode='TJKT'
                 GROUP BY cbt_quiz.name,a_kelas.kelas
                 ORDER BY a_kelas.kelas ASC;";
         $query = $this->db->query($sql);
@@ -344,7 +344,7 @@ class Model_ujian extends CI_Model
                 ON cbt_user.username=a_siswa.username  
                 INNER JOIN a_kelas
                 ON a_siswa.kelas=a_kelas.id
-                WHERE cbt_user.lastname LIKE '%bdp%'
+                WHERE cbt_user.lastname LIKE '%PM%'
                 ORDER BY `cbt_quiz_attempts`.`timefinish`  ASC;";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -361,7 +361,7 @@ class Model_ujian extends CI_Model
                 ON cbt_user.username=a_siswa.username  
                 INNER JOIN a_kelas
                 ON a_siswa.kelas=a_kelas.id
-                WHERE cbt_user.lastname LIKE '%otkp%'
+                WHERE cbt_user.lastname LIKE '%MPLB%'
                 ORDER BY `cbt_quiz_attempts`.`timefinish`  ASC;";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -378,7 +378,7 @@ class Model_ujian extends CI_Model
                 ON cbt_user.username=a_siswa.username  
                 INNER JOIN a_kelas
                 ON a_siswa.kelas=a_kelas.id
-                WHERE cbt_user.lastname LIKE '%tkj%'
+                WHERE cbt_user.lastname LIKE '%TJKT%'
                 ORDER BY `cbt_quiz_attempts`.`timefinish`  ASC;";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -429,7 +429,7 @@ class Model_ujian extends CI_Model
                 ON cbt_quiz.course=cbt_course.id
                 INNER JOIN cbt_quiz_attempts
                 ON cbt_quiz.id=cbt_quiz_attempts.quiz
-                WHERE cbt_course.fullname LIKE '%BDP%'
+                WHERE cbt_course.fullname LIKE '%PM%'
                 GROUP BY cbt_quiz.name";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -447,7 +447,7 @@ class Model_ujian extends CI_Model
                 ON cbt_quiz.course=cbt_course.id
                 INNER JOIN cbt_quiz_attempts
                 ON cbt_quiz.id=cbt_quiz_attempts.quiz
-                WHERE cbt_course.fullname LIKE '%OTKP%'
+                WHERE cbt_course.fullname LIKE '%MPLB%'
                 GROUP BY cbt_quiz.name";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -465,7 +465,7 @@ class Model_ujian extends CI_Model
                 ON cbt_quiz.course=cbt_course.id
                 INNER JOIN cbt_quiz_attempts
                 ON cbt_quiz.id=cbt_quiz_attempts.quiz
-                WHERE cbt_course.fullname LIKE '%TKJ%'
+                WHERE cbt_course.fullname LIKE '%TJKT%'
                 GROUP BY cbt_quiz.name";
         $query = $this->db->query($sql);
         return $query->result_array();

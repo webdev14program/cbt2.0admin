@@ -22,7 +22,7 @@ class Model_mapel extends CI_Model
     public function countMapelBDP()
     {
         $sql = "SELECT COUNT(*) AS mapel_bdp FROM `cbt_course`
-                WHERE format='singleactivity' AND fullname LIKE '%BDP%'";
+                WHERE format='singleactivity' AND fullname LIKE '%PM%'";
         $query = $this->db->query($sql);
         return $query->row()->mapel_bdp;
     }
@@ -30,7 +30,7 @@ class Model_mapel extends CI_Model
     public function countMapelOTKP()
     {
         $sql = "SELECT COUNT(*) AS mapel_otkp FROM `cbt_course`
-                WHERE format='singleactivity' AND fullname LIKE '%OTKP%'";
+                WHERE format='singleactivity' AND fullname LIKE '%MPLB%'";
         $query = $this->db->query($sql);
         return $query->row()->mapel_otkp;
     }
@@ -38,7 +38,7 @@ class Model_mapel extends CI_Model
     public function countMapelTKJ()
     {
         $sql = "SELECT COUNT(*) AS mapel_tkj FROM `cbt_course`
-                WHERE format='singleactivity' AND fullname LIKE '%TKJ%'";
+                WHERE format='singleactivity' AND fullname LIKE '%TJKT%'";
         $query = $this->db->query($sql);
         return $query->row()->mapel_tkj;
     }
@@ -70,7 +70,7 @@ class Model_mapel extends CI_Model
     public function dataMapelBDP()
     {
         $sql = "SELECT * FROM `cbt_course`
-                WHERE format='singleactivity' AND fullname LIKE '%BDP%'";
+                WHERE format='singleactivity' AND fullname LIKE '%PM%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -78,7 +78,7 @@ class Model_mapel extends CI_Model
     public function dataMapelOTKP()
     {
         $sql = "SELECT * FROM `cbt_course`
-                WHERE format='singleactivity' AND fullname LIKE '%OTKP%'";
+                WHERE format='singleactivity' AND fullname LIKE '%MPLB%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -86,7 +86,7 @@ class Model_mapel extends CI_Model
     public function dataMapelTKJ()
     {
         $sql = "SELECT * FROM `cbt_course`
-                WHERE format='singleactivity' AND fullname LIKE '%TKJ%'";
+                WHERE format='singleactivity' AND fullname LIKE '%TJKT%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

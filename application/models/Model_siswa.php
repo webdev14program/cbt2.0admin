@@ -21,7 +21,7 @@ class Model_siswa extends CI_Model
     public function countOTKP()
     {
         $sql = "SELECT COUNT(*) AS otkp FROM `a_siswa`
-                WHERE a_siswa.jurusan='otkp';";
+                WHERE a_siswa.jurusan='mplb';";
         $query = $this->db->query($sql);
         return $query->row()->otkp;
     }
@@ -29,7 +29,7 @@ class Model_siswa extends CI_Model
     public function countTKJ()
     {
         $sql = "SELECT COUNT(*) AS tkj FROM `a_siswa`
-                WHERE a_siswa.jurusan='tkj';";
+                WHERE a_siswa.jurusan='tjkt';";
         $query = $this->db->query($sql);
         return $query->row()->tkj;
     }
@@ -37,7 +37,7 @@ class Model_siswa extends CI_Model
     public function countBDP()
     {
         $sql = "SELECT COUNT(*) AS bdp FROM `a_siswa`
-                WHERE a_siswa.jurusan='bdp';";
+                WHERE a_siswa.jurusan='pm';";
         $query = $this->db->query($sql);
         return $query->row()->bdp;
     }
@@ -100,7 +100,7 @@ INNER JOIN a_jurusan ON a_siswa.jurusan=a_jurusan.kode;";
                 on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
-                WHERE a_siswa.jurusan LIKE '%bdp%';";
+                WHERE a_siswa.jurusan LIKE '%pm%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -112,7 +112,7 @@ INNER JOIN a_jurusan ON a_siswa.jurusan=a_jurusan.kode;";
                 on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
-                WHERE a_siswa.jurusan LIKE '%otkp%';";
+                WHERE a_siswa.jurusan LIKE '%mplb%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -124,7 +124,7 @@ INNER JOIN a_jurusan ON a_siswa.jurusan=a_jurusan.kode;";
                 on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
-                WHERE a_siswa.jurusan LIKE '%tkj%';";
+                WHERE a_siswa.jurusan LIKE '%tjkt%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

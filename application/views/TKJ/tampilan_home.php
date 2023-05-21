@@ -1,7 +1,6 @@
 <div class="row">
     <div class="col-md">
         <div class="alert alert-success" role="alert">
-            <h2 class="text-center font-weight-bold">Administrator Computer Based Test</h2>
             <h2 class="text-center font-weight-bold"><?= $admin['nama'] ?></h2>
         </div>
 
@@ -12,7 +11,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold"><?= $siswaTKJ ?></h3>
-                                <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian TKJ</h4>
+                                <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian TJKT</h4>
                             </div>
 
                         </div>
@@ -25,7 +24,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold"><?= $kelasTKJ ?></h3>
-                                <h4 class=" text-white font-italic font-weight-bold">Kelas TKJ</h4>
+                                <h4 class=" text-white font-italic font-weight-bold">Kelas TJKT</h4>
                             </div>
 
                         </div>
@@ -40,7 +39,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold "><?= $ujianTKJ ?></h3>
-                                <h4 class="text-white  font-italic font-weight-bold">Jadwal Ujian TKJ</h4>
+                                <h4 class="text-white  font-italic font-weight-bold">Jadwal Ujian TJKT</h4>
                             </div>
 
                         </div>
@@ -76,7 +75,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">JENIS UJIAN</th>
                                     <th scope="col">NAMA MAPEL</th>
-                                    <th scope="col">STATUS</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -88,7 +87,6 @@
                                         <td><?= $no++ ?></td>
                                         <td class="  text-uppercase">computer based test</td>
                                         <td class=""><?= $row['fullname'] ?></td>
-                                        <td class="d-flex justify-content-center badge badge-success">OPEN</td>
                                 </tr>
                             <?php } ?>
                             </tbody>

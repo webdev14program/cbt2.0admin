@@ -1,7 +1,6 @@
 <div class="row">
     <div class="col-md">
         <div class="alert alert-success" role="alert">
-            <h2 class="text-center font-weight-bold">Administrator Computer Based Test</h2>
             <h2 class="text-center font-weight-bold"><?= $admin['nama'] ?></h2>
         </div>
 
@@ -12,7 +11,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold"><?= $siswaBDP ?></h3>
-                                <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian BDP</h4>
+                                <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian PM</h4>
                             </div>
 
                         </div>
@@ -25,7 +24,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold"><?= $kelasBDP ?></h3>
-                                <h4 class=" text-white font-italic font-weight-bold">Kelas BDP</h4>
+                                <h4 class=" text-white font-italic font-weight-bold">Kelas PM</h4>
                             </div>
 
                         </div>
@@ -40,7 +39,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold "><?= $ujiaBDP ?></h3>
-                                <h4 class="text-white  font-italic font-weight-bold">Jadwal Ujian BDP</h4>
+                                <h4 class="text-white  font-italic font-weight-bold">Jadwal Ujian PM</h4>
                             </div>
 
                         </div>

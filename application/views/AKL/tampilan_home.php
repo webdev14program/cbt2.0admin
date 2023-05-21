@@ -1,7 +1,6 @@
 <div class="row">
     <div class="col-md">
         <div class="alert alert-success" role="alert">
-            <h2 class="text-center font-weight-bold">Administrator Computer Based Test</h2>
             <h2 class="text-center font-weight-bold"><?= $admin['nama'] ?></h2>
         </div>
 
