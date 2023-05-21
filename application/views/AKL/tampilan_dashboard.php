@@ -6,7 +6,7 @@
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url() ?>Dashboard_akl">
-            <div class="sidebar-brand-text mx-3">CBT 2.0 <br> ADMIN DKV</div>
+            <div class="sidebar-brand-text mx-3">CBT 2.0 <br> ADMIN AKL</div>
         </a>
 
         <!-- Divider -->
