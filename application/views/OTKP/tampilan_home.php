@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold"><?= $siswaOTKP ?></h3>
-                                <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian OTP</h4>
+                                <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian</h4>
                             </div>
 
                         </div>
@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold"><?= $kelasOTKP ?></h3>
-                                <h4 class=" text-white font-italic font-weight-bold">Kelas OTP</h4>
+                                <h4 class=" text-white font-italic font-weight-bold">Kelas</h4>
                             </div>
 
                         </div>
@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold "><?= $ujianOTKP ?></h3>
-                                <h4 class="text-white  font-italic font-weight-bold">Jadwal Ujian OTP</h4>
+                                <h4 class="text-white  font-italic font-weight-bold">Jadwal Ujian</h4>
                             </div>
                         </div>
                     </div>

@@ -14,7 +14,6 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Kode Ujian</th>
-                                <th scope="col">Nama Ujian</th>
                                 <th scope="col">Nama Mapel</th>
                                 <th scope="col">Durasi Ujian</th>
                                 <th scope="col">Tanggal Ujian</th>
@@ -30,9 +29,6 @@
                                     <td><?php echo $no++; ?></td>
                                     <td>
                                         <h4 class="badge badge-primary"><?= $row['sortorder']; ?></h4>
-                                    </td>
-                                    <td>
-                                        <h4 class="badge badge-primary">COMPUTER BASED TEST</h4>
                                     </td>
                                     <td>
                                         <h4 class="badge badge-info text-uppercase"><?= $row['fullname']; ?></h4>

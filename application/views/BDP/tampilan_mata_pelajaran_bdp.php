@@ -14,7 +14,7 @@
                             <tr>
                                 <th>NO</th>
                                 <th>ID Ujian</th>
-                                <th>Jenis Ujian</th>
+
                                 <th>Mapel Ujian</th>
                             </tr>
                         </thead>
@@ -26,7 +26,6 @@
                                 ?>
                                     <td class="text-center"><?= $no++ ?></td>
                                     <td class="text-center"><?= $row['sortorder'] ?></td>
-                                    <td class="text-center font-weight-bold text-uppercase">COMPUTER BASED TEST</td>
                                     <td class="font-weight-bold"><?= $row['fullname'] ?></td>
                             </tr>
                         <?php } ?>

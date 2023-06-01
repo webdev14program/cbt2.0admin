@@ -87,7 +87,7 @@ class Dashboard_dkv extends CI_Controller
     public function rekap_nilai_DKV()
     {
         $this->Model_keamanan->getKeamanan();
-        $isi['rekap_DKV'] = $this->Model_ujian->rekap_nilai_DKV();
+        $isi['rekap_dkv'] = $this->Model_ujian->rekap_nilai_DKV();
 
         $isi2['title'] = 'CBT | Administrator';
         $isi['content'] = 'DKV/Ujian/tampilan_rekap_nilai';

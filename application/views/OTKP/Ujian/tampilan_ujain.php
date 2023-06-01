@@ -14,7 +14,6 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Kode Ujian</th>
-                                <th scope="col">Nama Ujian</th>
                                 <th scope="col">Nama Mapel</th>
                                 <th scope="col">Durasi Ujian</th>
                                 <th scope="col">Tanggal Ujian</th>
@@ -31,9 +30,7 @@
                                     <td>
                                         <h4 class="badge badge-primary"><?= $row['sortorder']; ?></h4>
                                     </td>
-                                    <td>
-                                        <h4 class="badge badge-primary">computer based test</h4>
-                                    </td>
+
                                     <td>
                                         <h4 class="badge badge-info text-uppercase"><?= $row['fullname']; ?></h4>
                                     </td>

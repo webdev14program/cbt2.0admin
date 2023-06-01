@@ -30,7 +30,7 @@
                             <tr>
                                 <?php
                                 $no = 1;
-                                foreach ($rekap_akl as $row) {
+                                foreach ($rekap_dkv as $row) {
                                 ?>
                                     <td><?= $no++ ?></td>
                                     <td><?= $row['sortorder'] ?></td>

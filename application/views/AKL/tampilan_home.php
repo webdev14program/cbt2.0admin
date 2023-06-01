@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold"><?= $siswaAKL ?></h3>
-                                <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian AKL</h4>
+                                <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian</h4>
                             </div>
 
                         </div>
@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold"><?= $kelasAKL ?></h3>
-                                <h4 class=" text-white font-italic font-weight-bold">Kelas AKL</h4>
+                                <h4 class=" text-white font-italic font-weight-bold">Kelas</h4>
                             </div>
 
                         </div>
@@ -39,7 +39,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold "><?= $ujiaAKL ?></h3>
-                                <h4 class="text-white  font-italic font-weight-bold">Jadwal Ujian AKL</h4>
+                                <h4 class="text-white  font-italic font-weight-bold">Jadwal Ujian</h4>
                             </div>
 
                         </div>
@@ -52,7 +52,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold"><?= $mapel_akl ?></h3>
-                                <h4 class="text-white  font-italic font-weight-bold">Mapel AKL</h4>
+                                <h4 class="text-white  font-italic font-weight-bold">Mapel</h4>
                             </div>
 
                         </div>

@@ -316,6 +316,28 @@ class Model_ujian extends CI_Model
         return $query->result_array();
     }
 
+    public function FilterstatusPesertaDKV()
+    {
+        $sql = "SELECT cbt_quiz.name,a_kelas.kelas as nama_kelas,
+                count(IF(cbt_quiz_attempts.state='finished','Selesai',null)) AS selesai,
+                COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null)) AS masih_mengerjakan,
+                (count(IF(cbt_quiz_attempts.state='finished','Selesai',null))+COUNT(IF(cbt_quiz_attempts.state='inprogress','Belum Selesai',null))) AS jumlah_mengerjakan
+                FROM `cbt_quiz_attempts`
+                INNER JOIN cbt_user
+                on cbt_quiz_attempts.userid=cbt_user.id
+                INNER JOIN cbt_quiz
+                ON cbt_quiz_attempts.quiz=cbt_quiz.id
+                INNER JOIN a_siswa
+                ON cbt_user.username=a_siswa.username  
+                INNER JOIN a_kelas
+                ON a_siswa.kelas=a_kelas.id
+                WHERE a_kelas.kode='DKV'
+                GROUP BY cbt_quiz.name,a_kelas.kelas
+                ORDER BY a_kelas.kelas ASC;";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function statusPesertaAKL()
     {
         $sql = "SELECT *, a_kelas.kelas as nama_kelas FROM `cbt_quiz_attempts`
@@ -379,6 +401,23 @@ class Model_ujian extends CI_Model
                 INNER JOIN a_kelas
                 ON a_siswa.kelas=a_kelas.id
                 WHERE cbt_user.lastname LIKE '%TJKT%'
+                ORDER BY `cbt_quiz_attempts`.`timefinish`  ASC;";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function statusPesertaDKV()
+    {
+        $sql = "SELECT *, a_kelas.kelas as nama_kelas FROM `cbt_quiz_attempts`
+                INNER JOIN cbt_user
+                on cbt_quiz_attempts.userid=cbt_user.id
+                INNER JOIN cbt_quiz
+                ON cbt_quiz_attempts.quiz=cbt_quiz.id
+                INNER JOIN a_siswa
+                ON cbt_user.username=a_siswa.username  
+                INNER JOIN a_kelas
+                ON a_siswa.kelas=a_kelas.id
+                WHERE cbt_user.lastname LIKE '%DKV%'
                 ORDER BY `cbt_quiz_attempts`.`timefinish`  ASC;";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -454,6 +493,24 @@ class Model_ujian extends CI_Model
     }
 
     public function rekap_nilai_tkj()
+    {
+        $sql = "SELECT  cbt_quiz.course as id_course,cbt_quiz.*,cbt_course.*,cbt_quiz_attempts.*,
+                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
+                FROM_UNIXTIME(timeclose) AS timeclose, dayname(FROM_UNIXTIME(timeclose)) AS hariakhir, day(FROM_UNIXTIME(timeclose)) AS taggalakhir, monthname(FROM_UNIXTIME(timeclose)) AS bulanakhir, year(FROM_UNIXTIME(timeclose)) AS tahunakhir,
+                hour( FROM_UNIXTIME(timeopen)) AS jamAwal,minute( FROM_UNIXTIME(timeopen)) menitAwal,
+                hour(FROM_UNIXTIME(timeclose)) AS jamAkhir, minute(FROM_UNIXTIME(timeclose)) AS menitAkhir
+                FROM `cbt_quiz`
+                INNER JOIN cbt_course
+                ON cbt_quiz.course=cbt_course.id
+                INNER JOIN cbt_quiz_attempts
+                ON cbt_quiz.id=cbt_quiz_attempts.quiz
+                WHERE cbt_course.fullname LIKE '%TJKT%'
+                GROUP BY cbt_quiz.name";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function rekap_nilai_DKV()
     {
         $sql = "SELECT  cbt_quiz.course as id_course,cbt_quiz.*,cbt_course.*,cbt_quiz_attempts.*,
                 FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
