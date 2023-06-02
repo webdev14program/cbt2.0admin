@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'srv144.niagahoster.com',
-	'username' => 'webd1830_cbtonline',
-	'password' => 'Rdss1995*',
-	'database' => 'webd1830_cbtonline',
+	'hostname' => '34.101.198.119',
+	'username' => 'root',
+	'password' => 'Rdss1995',
+	'database' => 'cbtonline-db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
