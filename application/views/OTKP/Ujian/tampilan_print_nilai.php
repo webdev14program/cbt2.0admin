@@ -19,7 +19,7 @@
         <div class="row" style="margin-top: 50px;">
             <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 150px;height: 150px;">
             <div class="col-md mt-4">
-                <h5>Jenis Ujian : UJIAN KENAIKAN KELAS 2020/2021</h5>
+                <h5>Jenis Ujian : COMPUTER BASED TEST</h5>
                 <h5>Mata Pelajaran : <?= $header['fullname'] ?></h5>
                 <h5>Jadwal Awal : <?= $header['hari_awal']; ?>, <?= $header['tanggal_awal']; ?> <?= $header['bulan_awal']; ?> <?= $header['tahun_awal']; ?></h5>
                 <h5>Sekolah : SMK TUNAS HARAPAN JAKARTA BARAT</h5>

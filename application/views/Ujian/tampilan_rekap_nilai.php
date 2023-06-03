@@ -35,8 +35,7 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $row['sortorder'] ?></td>
                                     <td><?= $row['name'] ?></td>
-                                    <td>
-                                        <h4 class="badge badge-success"><?= $row['harimulai']; ?>, <?= $row['taggalmulai']; ?> <?= $row['bulanmulai']; ?> <?= $row['tahunmulai']; ?> - <?= $row['hariakhir']; ?>, <?= $row['taggalakhir']; ?> <?= $row['bulanakhir']; ?> <?= $row['tahunakhir']; ?></h4>
+                                    <td><?= $row['harimulai']; ?>, <?= $row['taggalmulai']; ?> <?= $row['bulanmulai']; ?> <?= $row['tahunmulai']; ?>
                                     </td>
                                     <td class="ml-auto d-flex justify-content-aroundml-auto d-flex justify-content-around">
                                         <a class="btn btn-primary btn-sm" href="<?= base_url() ?>Dashboard/print_nilai/<?= $row['id_course'] ?>" target="_blank">Rekap Nilai PG</a>

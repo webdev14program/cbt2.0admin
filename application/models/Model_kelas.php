@@ -62,12 +62,12 @@ class Model_kelas extends CI_Model
 
     public function dataKelas()
     {
-        $sql = "SELECT a_kelas.id as id_kelas,a_kelas.*,a_jurusan.*,COUNT(*) AS jumlah_siswa FROM `a_siswa`
-                INNER JOIN a_kelas
-                ON a_siswa.kelas=a_kelas.id
-                INNER JOIN a_jurusan
-                ON a_kelas.kode=a_jurusan.kode
-                GROUP BY a_kelas.id;";
+        $sql = "SELECT a_kelas.id AS id_kelas,a_jurusan.id,a_kelas.kelas,a_jurusan.jurusan,COUNT(a_siswa.nama_siswa) AS jumlah_siswa FROM a_kelas
+INNER JOIN a_siswa
+ON a_kelas.id=a_siswa.kelas
+INNER JOIN a_jurusan
+ON a_kelas.kode=a_jurusan.kode
+GROUP BY a_jurusan.id,a_kelas.id";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

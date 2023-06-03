@@ -186,7 +186,7 @@ class Model_ujian extends CI_Model
         $sql = "SELECT cbt_sessions.id,cbt_user.firstname,cbt_user.lastname,cbt_sessions.firstip,FROM_UNIXTIME(cbt_sessions.timecreated) AS waktu_login FROM `cbt_sessions`
                 INNER JOIN cbt_user
                 ON cbt_sessions.userid=cbt_user.id
-                WHERE cbt_sessions.userid NOT IN ('2');";
+                WHERE cbt_sessions.userid NOT IN ('');";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -425,105 +425,92 @@ class Model_ujian extends CI_Model
 
     public function rekap_nilai()
     {
-        $sql = "SELECT  cbt_quiz.course as id_course,cbt_quiz.*,cbt_course.*,cbt_quiz_attempts.*,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                FROM_UNIXTIME(timeclose) AS timeclose, dayname(FROM_UNIXTIME(timeclose)) AS hariakhir, day(FROM_UNIXTIME(timeclose)) AS taggalakhir, monthname(FROM_UNIXTIME(timeclose)) AS bulanakhir, year(FROM_UNIXTIME(timeclose)) AS tahunakhir
-                FROM `cbt_quiz`
-                INNER JOIN cbt_course
-                ON cbt_quiz.course=cbt_course.id
-                INNER JOIN cbt_quiz_attempts
-                ON cbt_quiz.id=cbt_quiz_attempts.quiz
-                GROUP BY cbt_quiz.name";
+        // $sql = "SELECT  cbt_quiz.course as id_course,cbt_quiz.*,cbt_course.*,cbt_quiz_attempts.*,
+        //         FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
+        //         FROM_UNIXTIME(timeclose) AS timeclose, dayname(FROM_UNIXTIME(timeclose)) AS hariakhir, day(FROM_UNIXTIME(timeclose)) AS taggalakhir, monthname(FROM_UNIXTIME(timeclose)) AS bulanakhir, year(FROM_UNIXTIME(timeclose)) AS tahunakhir
+        //         FROM `cbt_quiz`
+        //         INNER JOIN cbt_course
+        //         ON cbt_quiz.course=cbt_course.id
+        //         INNER JOIN cbt_quiz_attempts
+        //         ON cbt_quiz.id=cbt_quiz_attempts.quiz
+        //         GROUP BY cbt_quiz.name";
+        $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_quiz.`name`,dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai
+FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+INNER JOIN cbt_quiz_attempts
+ON cbt_quiz.id=cbt_quiz_attempts.quiz
+GROUP BY  cbt_quiz.id";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     public function rekap_nilai_akl()
     {
-        $sql = "SELECT  cbt_quiz.course as id_course,cbt_quiz.*,cbt_course.*,cbt_quiz_attempts.*,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                FROM_UNIXTIME(timeclose) AS timeclose, dayname(FROM_UNIXTIME(timeclose)) AS hariakhir, day(FROM_UNIXTIME(timeclose)) AS taggalakhir, monthname(FROM_UNIXTIME(timeclose)) AS bulanakhir, year(FROM_UNIXTIME(timeclose)) AS tahunakhir,
-                hour( FROM_UNIXTIME(timeopen)) AS jamAwal,minute( FROM_UNIXTIME(timeopen)) menitAwal,
-                hour(FROM_UNIXTIME(timeclose)) AS jamAkhir, minute(FROM_UNIXTIME(timeclose)) AS menitAkhir
-                FROM `cbt_quiz`
-                INNER JOIN cbt_course
-                ON cbt_quiz.course=cbt_course.id
-                INNER JOIN cbt_quiz_attempts
-                ON cbt_quiz.id=cbt_quiz_attempts.quiz
-                WHERE cbt_course.fullname LIKE '%AKL%'
-                GROUP BY cbt_quiz.name";
+        $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_quiz.`name`,dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai
+FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+INNER JOIN cbt_quiz_attempts
+ON cbt_quiz.id=cbt_quiz_attempts.quiz
+ WHERE cbt_course.fullname LIKE '%AKL%'
+GROUP BY  cbt_quiz.id";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     public function rekap_nilai_bdp()
     {
-        $sql = "SELECT  cbt_quiz.course as id_course,cbt_quiz.*,cbt_course.*,cbt_quiz_attempts.*,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                FROM_UNIXTIME(timeclose) AS timeclose, dayname(FROM_UNIXTIME(timeclose)) AS hariakhir, day(FROM_UNIXTIME(timeclose)) AS taggalakhir, monthname(FROM_UNIXTIME(timeclose)) AS bulanakhir, year(FROM_UNIXTIME(timeclose)) AS tahunakhir,
-                hour( FROM_UNIXTIME(timeopen)) AS jamAwal,minute( FROM_UNIXTIME(timeopen)) menitAwal,
-                hour(FROM_UNIXTIME(timeclose)) AS jamAkhir, minute(FROM_UNIXTIME(timeclose)) AS menitAkhir
-                FROM `cbt_quiz`
-                INNER JOIN cbt_course
-                ON cbt_quiz.course=cbt_course.id
-                INNER JOIN cbt_quiz_attempts
-                ON cbt_quiz.id=cbt_quiz_attempts.quiz
-                WHERE cbt_course.fullname LIKE '%PM%'
-                GROUP BY cbt_quiz.name";
+        $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_quiz.`name`,dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai
+FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+INNER JOIN cbt_quiz_attempts
+ON cbt_quiz.id=cbt_quiz_attempts.quiz
+ WHERE cbt_course.fullname LIKE '%PM%'
+GROUP BY  cbt_quiz.id";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     public function rekap_nilai_otkp()
     {
-        $sql = "SELECT  cbt_quiz.course as id_course,cbt_quiz.*,cbt_course.*,cbt_quiz_attempts.*,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                FROM_UNIXTIME(timeclose) AS timeclose, dayname(FROM_UNIXTIME(timeclose)) AS hariakhir, day(FROM_UNIXTIME(timeclose)) AS taggalakhir, monthname(FROM_UNIXTIME(timeclose)) AS bulanakhir, year(FROM_UNIXTIME(timeclose)) AS tahunakhir,
-                hour( FROM_UNIXTIME(timeopen)) AS jamAwal,minute( FROM_UNIXTIME(timeopen)) menitAwal,
-                hour(FROM_UNIXTIME(timeclose)) AS jamAkhir, minute(FROM_UNIXTIME(timeclose)) AS menitAkhir
-                FROM `cbt_quiz`
-                INNER JOIN cbt_course
-                ON cbt_quiz.course=cbt_course.id
-                INNER JOIN cbt_quiz_attempts
-                ON cbt_quiz.id=cbt_quiz_attempts.quiz
-                WHERE cbt_course.fullname LIKE '%MPLB%'
-                GROUP BY cbt_quiz.name";
+        $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_quiz.`name`,dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai
+FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+INNER JOIN cbt_quiz_attempts
+ON cbt_quiz.id=cbt_quiz_attempts.quiz
+ WHERE cbt_course.fullname LIKE '%MPLB%'
+GROUP BY  cbt_quiz.id";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     public function rekap_nilai_tkj()
     {
-        $sql = "SELECT  cbt_quiz.course as id_course,cbt_quiz.*,cbt_course.*,cbt_quiz_attempts.*,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                FROM_UNIXTIME(timeclose) AS timeclose, dayname(FROM_UNIXTIME(timeclose)) AS hariakhir, day(FROM_UNIXTIME(timeclose)) AS taggalakhir, monthname(FROM_UNIXTIME(timeclose)) AS bulanakhir, year(FROM_UNIXTIME(timeclose)) AS tahunakhir,
-                hour( FROM_UNIXTIME(timeopen)) AS jamAwal,minute( FROM_UNIXTIME(timeopen)) menitAwal,
-                hour(FROM_UNIXTIME(timeclose)) AS jamAkhir, minute(FROM_UNIXTIME(timeclose)) AS menitAkhir
-                FROM `cbt_quiz`
-                INNER JOIN cbt_course
-                ON cbt_quiz.course=cbt_course.id
-                INNER JOIN cbt_quiz_attempts
-                ON cbt_quiz.id=cbt_quiz_attempts.quiz
-                WHERE cbt_course.fullname LIKE '%TJKT%'
-                GROUP BY cbt_quiz.name";
+        $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_quiz.`name`,dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai
+FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+INNER JOIN cbt_quiz_attempts
+ON cbt_quiz.id=cbt_quiz_attempts.quiz
+ WHERE cbt_course.fullname LIKE '%TJKT%'
+GROUP BY  cbt_quiz.id";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     public function rekap_nilai_DKV()
     {
-        $sql = "SELECT  cbt_quiz.course as id_course,cbt_quiz.*,cbt_course.*,cbt_quiz_attempts.*,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                FROM_UNIXTIME(timeclose) AS timeclose, dayname(FROM_UNIXTIME(timeclose)) AS hariakhir, day(FROM_UNIXTIME(timeclose)) AS taggalakhir, monthname(FROM_UNIXTIME(timeclose)) AS bulanakhir, year(FROM_UNIXTIME(timeclose)) AS tahunakhir,
-                hour( FROM_UNIXTIME(timeopen)) AS jamAwal,minute( FROM_UNIXTIME(timeopen)) menitAwal,
-                hour(FROM_UNIXTIME(timeclose)) AS jamAkhir, minute(FROM_UNIXTIME(timeclose)) AS menitAkhir
-                FROM `cbt_quiz`
-                INNER JOIN cbt_course
-                ON cbt_quiz.course=cbt_course.id
-                INNER JOIN cbt_quiz_attempts
-                ON cbt_quiz.id=cbt_quiz_attempts.quiz
-                WHERE cbt_course.fullname LIKE '%TJKT%'
-                GROUP BY cbt_quiz.name";
+        $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_quiz.`name`,dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai
+FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+INNER JOIN cbt_quiz_attempts
+ON cbt_quiz.id=cbt_quiz_attempts.quiz
+ WHERE cbt_course.fullname LIKE '%dkv%'
+GROUP BY  cbt_quiz.id";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
