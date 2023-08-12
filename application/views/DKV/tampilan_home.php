@@ -84,7 +84,7 @@
                                     foreach ($ujian_hari_ini as $row) {
                                     ?>
                                         <td><?= $no++ ?></td>
-                                        <td class="  text-uppercase">Computer Based Test</td>
+                                        <td class="  text-uppercase">CBT UH</td>
                                         <td class=""><?= $row['fullname'] ?></td>
                                 </tr>
                             <?php } ?>
