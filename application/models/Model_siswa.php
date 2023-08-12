@@ -124,7 +124,8 @@ INNER JOIN a_jurusan ON a_siswa.jurusan=a_jurusan.kode;";
                 on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
-                WHERE a_siswa.jurusan LIKE '%tjkt%';";
+                WHERE a_siswa.jurusan LIKE '%tjkt%'
+                ORDER BY a_siswa.id ASC;";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -136,7 +137,8 @@ INNER JOIN a_jurusan ON a_siswa.jurusan=a_jurusan.kode;";
                 on a_siswa.kelas=a_kelas.id
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
-                WHERE a_siswa.jurusan LIKE '%dkv%';";
+                WHERE a_siswa.jurusan LIKE '%dkv%'
+				ORDER BY a_siswa.id ASC;";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
