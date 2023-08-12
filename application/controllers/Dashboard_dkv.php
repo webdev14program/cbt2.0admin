@@ -40,7 +40,7 @@ class Dashboard_dkv extends CI_Controller
         $isi['data_siswa_dkv'] = $this->Model_siswa->dataSiswaDKV();
 
         $isi2['title'] = 'CBT | Administrator';
-        $isi['content'] = 'DKV/tampilan_siswa_DKV';
+        $isi['content'] = 'DKV/tampilan_siswa_dkv';
         $this->load->view('templates/header', $isi2);
         $this->load->view('DKV/tampilan_dashboard', $isi);
         $this->load->view('templates/footer');
