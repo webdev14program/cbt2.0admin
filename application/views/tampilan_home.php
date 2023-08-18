@@ -59,7 +59,7 @@
     </div>
 </div>
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-md mt-2">
         <div class="card">
             <div class="card-body bg-primary">
@@ -79,7 +79,7 @@
                 <div class="row">
                     <div class="col">
                         <h3 class="text-white  font-italic font-weight-bold"><?= $bdp ?></h3>
-                        <h4 class="text-white  font-italic font-weight-bold">Peserta BDP</h4>
+                        <h4 class="text-white  font-italic font-weight-bold">Peserta PM</h4>
                     </div>
 
                 </div>
@@ -92,7 +92,7 @@
                 <div class="row">
                     <div class="col">
                         <h3 class="text-white  font-italic font-weight-bold"><?= $otkp ?></h3>
-                        <h4 class="text-white  font-italic font-weight-bold">Peserta OTKP</h4>
+                        <h4 class="text-white  font-italic font-weight-bold">Peserta MPLB</h4>
                     </div>
 
                 </div>
@@ -106,15 +106,27 @@
                 <div class="row">
                     <div class="col">
                         <h3 class="text-white  font-italic font-weight-bold"><?= $tkj ?></h3>
-                        <h4 class="text-white  font-italic font-weight-bold">Peserta TKJ</h4>
+                        <h4 class="text-white  font-italic font-weight-bold">Peserta TJKT</h4>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> -->
+    <div class="col-md mt-2">
+        <div class="card">
+            <div class="card-body bg-success">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-white  font-italic font-weight-bold"><?= $dkv ?></h3>
+                        <h4 class="text-white  font-italic font-weight-bold">Peserta DKV</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-md mt-2">
         <div class="card">
             <div class="card-header bg-primary">
@@ -141,4 +153,4 @@
         </div>
     </div>
 
-</div>
+</div> -->

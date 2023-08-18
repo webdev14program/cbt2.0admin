@@ -22,7 +22,7 @@ class Dashboard extends CI_Controller
         $isi['bdp'] = $this->Model_siswa->countBDP();
         $isi['otkp'] = $this->Model_siswa->countOTKP();
         $isi['tkj'] = $this->Model_siswa->countTKJ();
-
+        $isi['dkv'] = $this->Model_siswa->countDKV();
 
         $isi2['title'] = 'CBT | Administrator';
         $isi['content'] = 'tampilan_home';
