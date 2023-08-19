@@ -54,7 +54,8 @@ class Model_siswa extends CI_Model
     {
         $sql = "SELECT a_siswa.nama_siswa,a_jurusan.jurusan,a_kelas.kelas,a_siswa.username,a_siswa.password FROM `a_siswa` 
 INNER JOIN a_kelas on a_siswa.kelas=a_kelas.id 
-INNER JOIN a_jurusan ON a_siswa.jurusan=a_jurusan.kode;";
+INNER JOIN a_jurusan ON a_siswa.jurusan=a_jurusan.kode 
+order by a_siswa.id;";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
