@@ -71,9 +71,8 @@
                     <div class="card-body">
                         <table class="table table-striped table-bordered">
                             <thead>
-                                <tr class="text-center">
+                                <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">JENIS UJIAN</th>
                                     <th scope="col">NAMA MAPEL</th>
                                 </tr>
                             </thead>
@@ -83,8 +82,7 @@
                                     $no = 1;
                                     foreach ($ujian_hari_ini as $row) {
                                     ?>
-                                        <td><?= $no++ ?></td>
-                                        <td class="  text-uppercase">Computer Based Test</td>
+                                        <td class="text-center"><?= $no++ ?></td>
                                         <td class=""><?= $row['fullname'] ?></td>
                                 </tr>
                             <?php } ?>

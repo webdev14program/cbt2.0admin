@@ -73,7 +73,6 @@
                             <thead>
                                 <tr class="text-center">
                                     <th scope="col">#</th>
-                                    <th scope="col">JENIS UJIAN</th>
                                     <th scope="col">NAMA MAPEL</th>
                                 </tr>
                             </thead>
@@ -84,7 +83,6 @@
                                     foreach ($ujian_hari_ini as $row) {
                                     ?>
                                         <td><?= $no++ ?></td>
-                                        <td class="  text-uppercase">computer based test</td>
                                         <td class=""><?= $row['fullname'] ?></td>
                                 </tr>
                             <?php } ?>

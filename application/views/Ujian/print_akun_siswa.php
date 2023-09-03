@@ -53,7 +53,7 @@
                     ?>
                         <td><?php echo $no++; ?></td>
                         <td class="text-uppercase"><?= $row['nama_siswa'] ?></td>
-                        <td><?= $row['nama_kelas'] ?></td>
+                        <td><?= $row['kelas'] ?></td>
                         <td><?= $row['username'] ?></td>
                         <td><?= $row['password'] ?></td>
 

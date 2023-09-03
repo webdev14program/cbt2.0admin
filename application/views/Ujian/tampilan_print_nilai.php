@@ -23,7 +23,7 @@
                     <tbody>
                         <tr>
                             <td>JENIS UJIAN</td>
-                            <td class="font-weight-bold">: COMPUTER BASED TEST</td>
+                            <td class="font-weight-bold">: SUMATIF TENGAH SEMESTER GANJIL 2023/2024</td>
                         </tr>
                         <tr>
                             <td>MATA PELAJARAN</td>
