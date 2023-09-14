@@ -49,9 +49,10 @@ $query_builder = TRUE;
 // 	'save_queries' => TRUE
 // );
 
-$db['default']['port'] = 16751;
+
 
 $db['default'] = array(
+	'port' => 16751,
 	'dsn'	=> '',
 	'hostname' => 'vultr-prod-c0653573-c574-4def-ac2e-13330230b590-vultr-prod-4a64.vultrdb.com',
 	'username' => 'vultradmin',
@@ -68,7 +69,7 @@ $db['default'] = array(
 	'swap_pre' => '',
 	'encrypt' => FALSE,
 	'compress' => FALSE,
-	'stricton' => FALSE,
+	//'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
 );
