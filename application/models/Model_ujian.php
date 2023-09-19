@@ -183,10 +183,10 @@ class Model_ujian extends CI_Model
 
     public function statusPesertaLogin()
     {
-        $sql = "SELECT cbt_sessions.id,cbt_user.firstname,cbt_user.lastname,cbt_sessions.firstip,FROM_UNIXTIME(cbt_sessions.timecreated) AS waktu_login FROM `cbt_sessions`
+        $sql = "SELECT cbt_sessions.id,cbt_sessions.userid,cbt_user.firstname,cbt_user.lastname,cbt_sessions.firstip,FROM_UNIXTIME(cbt_sessions.timecreated) AS waktu_login FROM `cbt_sessions`
                 INNER JOIN cbt_user
                 ON cbt_sessions.userid=cbt_user.id
-                WHERE cbt_sessions.userid NOT IN ('');";
+                WHERE cbt_sessions.userid NOT IN ('2')";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
