@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <div class="row" style="margin-top: 50px;">
-            <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 160px;height: 160px;margin-top: 20px;">
+            <!-- <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 160px;height: 160px;margin-top: 20px;"> -->
             <div class="col-md mt-4">
                 <table class="table border">
                     <tbody>

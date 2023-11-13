@@ -56,8 +56,11 @@ class Model_ujian extends CI_Model
 
     public function ujian_hari_ini()
     {
-        $sql = "SELECT * FROM `cbt_course`
-                WHERE cbt_course.visible='1' AND cbt_course.sortorder>1;";
+        $sql = "SELECT cbt_course.id,cbt_quiz.id,cbt_course.fullname,cbt_quiz.name,cbt_quiz.password 
+FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+WHERE cbt_course.visible='1' AND cbt_course.sortorder>1;";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

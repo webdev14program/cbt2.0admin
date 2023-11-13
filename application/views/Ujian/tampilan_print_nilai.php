@@ -17,13 +17,13 @@
 
     <div class="container">
         <div class="row" style="margin-top: 50px;">
-            <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 160px;height: 160px;margin-top: 20px;">
+            <!-- <img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 160px;height: 160px;margin-top: 20px;"> -->
             <div class="col-md mt-4">
                 <table class="table border">
                     <tbody>
                         <tr>
                             <td>JENIS UJIAN</td>
-                            <td class="font-weight-bold">: SUMATIF TENGAH SEMESTER GANJIL 2023/2024</td>
+                            <td class="font-weight-bold text-uppercase">: Sumatif Akhir Semester GANJIL 2023/2024</td>
                         </tr>
                         <tr>
                             <td>MATA PELAJARAN</td>
