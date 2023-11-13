@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row" style="margin-top: 50px;">
             <div class="col-md mt-4">
-                <h5>Jenis Ujian : COMPUTER BASED TEST</h5>
+                <td class="font-weight-bold text-uppercase">: Sumatif Akhir Semester GANJIL 2023/2024</td>
                 <h5>Mata Pelajaran : <?= $header['fullname'] ?></h5>
                 <h5>Jadwal Awal : <?= $header['hari_awal']; ?>, <?= $header['tanggal_awal']; ?> <?= $header['bulan_awal']; ?> <?= $header['tahun_awal']; ?></h5>
                 <h5>Sekolah : SMK TUNAS HARAPAN JAKARTA BARAT</h5>
