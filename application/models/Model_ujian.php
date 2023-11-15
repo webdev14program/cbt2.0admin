@@ -87,7 +87,9 @@ WHERE cbt_course.visible='1' AND cbt_course.sortorder>1;";
     }
     public function ujian_hari_ini_tkj()
     {
-        $sql = "SELECT * FROM `cbt_course`
+        $sql = "SELECT cbt_course.id,cbt_quiz.id,cbt_quiz.name,cbt_quiz.password FROM `cbt_course`
+INNER JOIN cbt_quiz
+ON cbt_quiz.course=cbt_course.id
                 WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%TJKT%';";
         $query = $this->db->query($sql);
         return $query->result_array();

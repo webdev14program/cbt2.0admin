@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md">
+    <div class="col-md-5">
         <div class="alert alert-success" role="alert">
             <h2 class="text-center font-weight-bold"><?= $admin['nama'] ?></h2>
         </div>
@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold"><?= $siswaTKJ ?></h3>
-                                <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian TJKT</h4>
+                                <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian</h4>
                             </div>
 
                         </div>
@@ -39,7 +39,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-white  font-italic font-weight-bold "><?= $ujianTKJ ?></h3>
-                                <h4 class="text-white  font-italic font-weight-bold">Jadwal Ujian TJKT</h4>
+                                <h4 class="text-white  font-italic font-weight-bold">Jadwal Ujian</h4>
                             </div>
 
                         </div>
@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md">
+    <div class="col-md-7">
         <div class="row">
             <div class="col-md">
                 <div class="card">
@@ -73,8 +73,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">NAMA MAPEL</th>
-
+                                    <th scope="col">NAMA Ujian</th>
+                                    <th scope="col">Token</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -84,7 +84,8 @@
                                     foreach ($ujian_hari_ini as $row) {
                                     ?>
                                         <td><?= $no++ ?></td>
-                                        <td class=""><?= $row['fullname'] ?></td>
+                                        <td class=""><?= $row['name'] ?></td>
+                                        <td class=""><?= $row['password'] ?></td>
                                 </tr>
                             <?php } ?>
                             </tbody>

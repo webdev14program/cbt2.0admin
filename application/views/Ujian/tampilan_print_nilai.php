@@ -23,7 +23,7 @@
                     <tbody>
                         <tr>
                             <td>JENIS UJIAN</td>
-                            <td class="font-weight-bold text-uppercase">: Sumatif Akhir Semester GANJIL 2023/2024</td>
+                            <td class="font-weight-bold text-uppercase">: Computer Based Test</td>
                         </tr>
                         <tr>
                             <td>MATA PELAJARAN</td>

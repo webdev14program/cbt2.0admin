@@ -1,6 +1,5 @@
 <div class="alert alert-success" role="alert">
     <h2 class="text-center font-weight-bold">Administrator Computer Based Test</h2>
-    <h2 class="text-center font-weight-bold text-uppercase"> smk tunas harapan</h2>
     <h2 class="text-center font-weight-bold">Admin Utama</h2>
 </div>
 
@@ -13,7 +12,6 @@
                         <h3 class="text-white  font-italic font-weight-bold"><?= $siswa ?></h3>
                         <h4 class=" text-white font-italic font-weight-bold">Peserta Ujian</h4>
                     </div>
-
                 </div>
             </div>
         </div>
