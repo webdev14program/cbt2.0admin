@@ -316,6 +316,98 @@ class Dashboard extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function refresh_token($id)
+    {
+        $id = $this->input->post('id');
+        $course = $this->input->post('course');
+        $name = $this->input->post('name');
+        $intro = $this->input->post('intro');
+        $introformat = $this->input->post('introformat');
+        $timeopen = $this->input->post('timeopen');
+        $timeclose = $this->input->post('timeclose');
+        $timelimit = $this->input->post('timelimit');
+        $overduehandling = $this->input->post('overduehandling');
+        $graceperiod = $this->input->post('graceperiod');
+        $preferredbehaviour = $this->input->post('preferredbehaviour');
+        $canredoquestions = $this->input->post('canredoquestions');
+        $attempts = $this->input->post('attempts');
+        $attemptonlast = $this->input->post('attemptonlast');
+        $grademethod = $this->input->post('grademethod');
+        $decimalpoints = $this->input->post('decimalpoints');
+        $questiondecimalpoints = $this->input->post('questiondecimalpoints');
+        $reviewattempt = $this->input->post('reviewattempt');
+        $reviewcorrectness = $this->input->post('reviewcorrectness');
+        $reviewmarks = $this->input->post('reviewmarks');
+        $reviewspecificfeedback = $this->input->post('reviewspecificfeedback');
+        $reviewgeneralfeedback = $this->input->post('reviewgeneralfeedback');
+        $reviewrightanswer = $this->input->post('reviewrightanswer');
+        $reviewoverallfeedback = $this->input->post('reviewoverallfeedback');
+        $questionsperpage = $this->input->post('questionsperpage');
+        $navmethod = $this->input->post('navmethod');
+        $shuffleanswers = $this->input->post('shuffleanswers');
+        $sumgrades = $this->input->post('sumgrades');
+        $grade = $this->input->post('grade');
+        $timecreated = $this->input->post('timecreated');
+        $timemodified = $this->input->post('timemodified');
+        $password = 'SAS' . rand(1111, 99999);
+        $subnet = $this->input->post('subnet');
+        $browsersecurity = $this->input->post('browsersecurity');
+        $delay1 = $this->input->post('delay1');
+        $delay2 = $this->input->post('delay2');
+        $showuserpicture = $this->input->post('showuserpicture');
+        $showblocks = $this->input->post('showblocks');
+        $completionattemptsexhausted = $this->input->post('completionattemptsexhausted');
+        $completionpass = $this->input->post('completionpass');
+        $allowofflineattempts = $this->input->post('allowofflineattempts');
+
+        $data = array(
+            'id' => $id,
+            'course' => $course,
+            'name' => $name,
+            'intro' => $intro,
+            'introformat' => $introformat,
+            'timeopen' => $timeopen,
+            'timeclose' => $timeclose,
+            'timelimit' => $timelimit,
+            'overduehandling' => $overduehandling,
+            'graceperiod' => $graceperiod,
+            'preferredbehaviour' => $preferredbehaviour,
+            'canredoquestions' => $canredoquestions,
+            'attempts' => $attempts,
+            'attemptonlast' => $attemptonlast,
+            'grademethod' => $grademethod,
+            'decimalpoints' => $decimalpoints,
+            'questiondecimalpoints' => $questiondecimalpoints,
+            'reviewattempt' => $reviewattempt,
+            'reviewcorrectness' => $reviewcorrectness,
+            'reviewmarks' => $reviewmarks,
+            'reviewspecificfeedback' => $reviewspecificfeedback,
+            'reviewgeneralfeedback' => $reviewgeneralfeedback,
+            'reviewrightanswer' => $reviewrightanswer,
+            'reviewoverallfeedback' => $reviewoverallfeedback,
+            'questionsperpage' => $questionsperpage,
+            'navmethod' => $navmethod,
+            'shuffleanswers' => $shuffleanswers,
+            'sumgrades' => $sumgrades,
+            'grade' => $grade,
+            'timecreated' => $timecreated,
+            'timemodified' => $timemodified,
+            'password' => $password,
+            'subnet' => $subnet,
+            'browsersecurity' => $browsersecurity,
+            'delay1' => $delay1,
+            'delay2' => $delay2,
+            'showuserpicture' => $showuserpicture,
+            'showblocks' => $showblocks,
+            'completionattemptsexhausted' => $completionattemptsexhausted,
+            'completionpass' => $completionpass,
+            'allowofflineattempts' => $allowofflineattempts
+        );
+        $this->db->where('id', $id);
+        $this->db->update('cbt_quiz', $data);
+        redirect('Dashboard/status_ujian');
+    }
+
     public function hapus_all_peserta_login()
     {
         $this->db->empty_table('cbt_sessions');
