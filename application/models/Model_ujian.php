@@ -56,17 +56,53 @@ class Model_ujian extends CI_Model
 
     public function ujian_hari_ini()
     {
-        $sql = "SELECT * FROM `cbt_quiz`";
+        $sql = "SELECT cbt_quiz.* FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+ WHERE cbt_course.visible='1';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
     public function ujian_hari_ini_akl()
     {
-        $sql = "SELECT * FROM `cbt_course`
-                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%akl%';";
+        $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_course`
+INNER JOIN cbt_quiz
+ON cbt_quiz.course=cbt_course.id
+WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%akl%';";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+
+    public function token_x_akl()
+    {
+        $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%x akl%';";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function token_xi_akl()
+    {
+        $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%xi akl%';";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function token_xii_akl()
+    {
+        $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_quiz`
+INNER JOIN cbt_course
+ON cbt_quiz.course=cbt_course.id
+WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%xii akl%';";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function ujian_hari_ini_bdp()
     {
         $sql = "SELECT * FROM `cbt_course`

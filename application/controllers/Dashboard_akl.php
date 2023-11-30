@@ -46,6 +46,18 @@ class Dashboard_akl extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function token_ujian_akl()
+    {
+        $isi['token_x_akl'] = $this->Model_ujian->token_x_akl();
+        $isi['token_xi_akl'] = $this->Model_ujian->token_xi_akl();
+        $isi['token_xii_akl'] = $this->Model_ujian->token_xii_akl();
+        $isi2['title'] = 'CBT | Administrator';
+        $isi['content'] = 'AKL/tampilan_token_akl';
+        $this->load->view('templates/header', $isi2);
+        $this->load->view('AKL/tampilan_dashboard', $isi);
+        $this->load->view('templates/footer');
+    }
+
     public function jadwal_ujian_akl()
     {
         $this->Model_keamanan->getKeamanan();

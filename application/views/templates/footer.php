@@ -23,6 +23,12 @@
 <!-- Page level custom scripts -->
 <script src="<?= base_url() ?>assets/vendor/sbadmin/js/demo/datatables-demo.js"></script>
 
+
+<!-- <script>
+    setTimeout(function() {
+        document.getElementById('refresh_token').click();
+    }, 5000);
+</script> -->
 </body>
 
 </html>

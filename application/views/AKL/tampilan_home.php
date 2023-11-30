@@ -74,6 +74,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">NAMA MAPEL</th>
+                                    <th scope="col">TOKEN</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -84,6 +85,7 @@
                                     ?>
                                         <td class="text-center"><?= $no++ ?></td>
                                         <td class=""><?= $row['fullname'] ?></td>
+                                        <td class=""><?= $row['password'] ?></td>
                                 </tr>
                             <?php } ?>
                             </tbody>

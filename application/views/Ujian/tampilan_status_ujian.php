@@ -14,7 +14,7 @@
 
 <div class="row">
     <div class="col-md">
-        <table class="table table-striped table-bordered">
+        <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr class="text-center">
                     <th scope="col">#</th>
@@ -80,7 +80,7 @@
                                     <input type="text" class="form-control" value="<?= $row['allowofflineattempts'] ?>" name="allowofflineattempts" hidden>
                                 </div>
                                 <h5 class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                    <button type="submit" class="btn btn-primary btn-sm" id="refresh_token">Submit</button>
                                 </h5>
                             </form>
                         </td>

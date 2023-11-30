@@ -39,6 +39,7 @@
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard_akl/mata_pelajaran_akl">Master Mata Pelajaran</a>
                 </div>
             </div>
+
         </li>
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url() ?>Dashboard_akl/siswa_akl">
