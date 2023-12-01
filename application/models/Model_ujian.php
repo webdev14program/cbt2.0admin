@@ -220,10 +220,11 @@ ON cbt_quiz.course=cbt_course.id
 
     public function statusPesertaLogin()
     {
-        $sql = "SELECT cbt_sessions.id,cbt_sessions.userid,cbt_user.firstname,cbt_user.lastname,cbt_sessions.firstip,FROM_UNIXTIME(cbt_sessions.timecreated) AS waktu_login,COUNT(*) AS jumlah_sesion_siswa FROM `cbt_sessions`
+        $sql = "SELECT cbt_sessions.id,cbt_sessions.userid,cbt_user.firstname,cbt_user.lastname,cbt_sessions.firstip,FROM_UNIXTIME(cbt_sessions.timecreated) AS waktu_login
+FROM `cbt_sessions`
 INNER JOIN cbt_user
 ON cbt_user.id=cbt_sessions.userid
-GROUP BY cbt_sessions.userid;";
+";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

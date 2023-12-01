@@ -32,7 +32,6 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Nama Siswa</th>
                                 <th scope="col">Kelas</th>
-                                <th scope="col">Jumlah Login</th>
                                 <th scope="col">IP Login</th>
                                 <th scope="col">Waktu</th>
                             </tr>
@@ -46,7 +45,6 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $row['firstname'] ?></td>
                                     <td><?= $row['lastname'] ?></td>
-                                    <td><?= $row['jumlah_sesion_siswa'] ?></td>
                                     <td><?= $row['firstip'] ?></td>
                                     <td><?= $row['waktu_login'] ?></td>
                             </tr>
