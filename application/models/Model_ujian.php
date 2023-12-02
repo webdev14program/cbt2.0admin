@@ -575,7 +575,7 @@ GROUP BY  cbt_quiz.id";
 
     public function print_nilai_rekap($id_course)
     {
-        $sql = "SELECT cbt_quiz_grades.grade as nilai,cbt_user.*,cbt_quiz.*,cbt_course.*,a_siswa.*,a_kelas.*,a_kelas.kelas as nama_kelas FROM `cbt_quiz_grades`
+        $sql = "SELECT cbt_user.firstname,a_kelas.kelas as nama_kelas,cbt_quiz_grades.grade AS nilai FROM `cbt_quiz_grades`
                 INNER JOIN cbt_user
                 ON cbt_quiz_grades.userid=cbt_user.id
                 inner JOIN cbt_quiz
@@ -587,7 +587,7 @@ GROUP BY  cbt_quiz.id";
                 INNER JOIN a_kelas
                 on a_siswa.kelas=a_kelas.id
                 WHERE cbt_quiz.course='$id_course'  
-                ORDER BY `a_siswa`.`kelas`  ASC;";
+                ORDER BY cbt_user.firstname  ASC;";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

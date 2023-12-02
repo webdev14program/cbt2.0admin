@@ -38,7 +38,7 @@
                                     <td><?= $row['harimulai']; ?>, <?= $row['taggalmulai']; ?> <?= $row['bulanmulai']; ?> <?= $row['tahunmulai']; ?>
                                     </td>
                                     <td class="ml-auto d-flex justify-content-aroundml-auto d-flex justify-content-around">
-                                        <a class="btn btn-primary btn-sm" href="<?= base_url() ?>Dashboard_akl/print_nilai_akl/<?= $row['id_course'] ?>" target="_blank">Rekap Nilai PG</a>
+                                        <a class="btn btn-primary btn-sm" href="<?= base_url() ?>Dashboard_dkv/print_nilai_dkv/<?= $row['id_course'] ?>" target="_blank">Rekap Nilai PG</a>
                                     </td>
                             </tr>
                         <?php } ?>

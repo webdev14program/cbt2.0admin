@@ -96,7 +96,7 @@ class Dashboard_dkv extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function print_nilai_DKV($id_course)
+    public function print_nilai_dkv($id_course)
     {
         $this->Model_keamanan->getKeamanan();
         $isi['header'] = $this->Model_ujian->print_nilai_header($id_course);
