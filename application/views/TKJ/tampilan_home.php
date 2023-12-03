@@ -84,7 +84,7 @@
                                     foreach ($ujian_hari_ini as $row) {
                                     ?>
                                         <td><?= $no++ ?></td>
-                                        <td class=""><?= $row['name'] ?></td>
+                                        <td class=""><?= $row['fullname'] ?></td>
                                         <td class=""><?= $row['password'] ?></td>
                                 </tr>
                             <?php } ?>

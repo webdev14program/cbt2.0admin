@@ -68,7 +68,8 @@ ON cbt_quiz.course=cbt_course.id
         $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_course`
 INNER JOIN cbt_quiz
 ON cbt_quiz.course=cbt_course.id
-WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%akl%';";
+WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%akl%'
+ORDER BY cbt_course.fullname ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -105,32 +106,42 @@ WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%xii akl%';";
 
     public function ujian_hari_ini_bdp()
     {
-        $sql = "SELECT * FROM `cbt_course`
-                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%PM%';";
+        $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_course`
+INNER JOIN cbt_quiz
+ON cbt_quiz.course=cbt_course.id
+WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%pm%'
+ORDER BY cbt_course.fullname ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
     public function ujian_hari_ini_otkp()
     {
-        $sql = "SELECT * FROM `cbt_course`
-                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%MPLB%';";
+        $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_course`
+INNER JOIN cbt_quiz
+ON cbt_quiz.course=cbt_course.id
+WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%mplb%'
+ORDER BY cbt_course.fullname ASC;";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
     public function ujian_hari_ini_tkj()
     {
-        $sql = "SELECT cbt_course.id,cbt_quiz.id,cbt_quiz.name,cbt_quiz.password FROM `cbt_course`
+        $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_course`
 INNER JOIN cbt_quiz
 ON cbt_quiz.course=cbt_course.id
-                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%TJKT%';";
+WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%tjkt%'
+ORDER BY cbt_course.fullname ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     public function ujian_hari_ini_dkv()
     {
-        $sql = "SELECT * FROM `cbt_course`
-                WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%dkv%';";
+        $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_course`
+INNER JOIN cbt_quiz
+ON cbt_quiz.course=cbt_course.id
+WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%dkv%'
+ORDER BY cbt_course.fullname ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

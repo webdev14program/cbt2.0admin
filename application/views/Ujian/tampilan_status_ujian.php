@@ -21,7 +21,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">NAMA MAPEL</th>
                     <th scope="col">TOKEN</th>
-                    <th scope="col">AKSI</th>
+                    <!-- <th scope="col">AKSI</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +34,7 @@
                         <td class=""><?= $row['id'] ?></td>
                         <td class=""><?= $row['name'] ?></td>
                         <td class="text-center"><?= $row['password'] ?></td>
-                        <td>
+                        <!-- <td>
                             <form action="<?= base_url() ?>Dashboard/refresh_token/<?= $row['id'] ?>" method="post">
                                 <div class="form-group">
                                     <input type="text" class="form-control" value="<?= $row['id'] ?>" name="id" hidden>
@@ -83,7 +83,7 @@
                                     <button type="submit" class="btn btn-primary btn-sm" id="refresh_token">Submit</button>
                                 </h5>
                             </form>
-                        </td>
+                        </td> -->
                 </tr>
             <?php } ?>
             </tbody>
