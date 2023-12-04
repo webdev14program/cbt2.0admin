@@ -1,6 +1,5 @@
 <div class="alert alert-success" role="alert">
-    <h2 class="text-center font-weight-bold">Administrator Computer Based Test</h2>
-    <h2 class="text-center font-weight-bold">Admin Utama</h2>
+    <h2 class="text-center text-uppercase font-weight-bold">CBT SMK Tunas Harapan <br>Admin utama</h2>
 </div>
 
 <div class="row mb-3">
