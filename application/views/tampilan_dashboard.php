@@ -43,12 +43,25 @@
                 </div>
             </div>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" href="<?= base_url() ?>Dashboard/siswa">
                 <i class="fas fa-user-graduate"></i>
                 <span>Peserta Ujian</span></a>
+        </li> -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-user-graduate"></i>
+                <span>Peserta Ujian</span>
+            </a>
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Custom Utilities:</h6>
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa">Peserta Ujian</a>
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_moodle">Peserta Ujian Moodle</a>
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa">Blokir Perta Ujian</a>
+                </div>
+            </div>
         </li>
-
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url() ?>Dashboard/jadwal_ujian">
                 <i class="far fa-calendar-alt"></i>

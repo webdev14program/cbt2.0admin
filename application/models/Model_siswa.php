@@ -59,6 +59,18 @@ order by a_siswa.id;";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+
+    public function dataSiswaMoodle()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2);";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+
     public function header_akun_siswa($id_kelas)
     {
         $sql = "SELECT a_siswa.*,a_kelas.*,a_jurusan.*,a_kelas.kelas AS nama_kelas FROM `a_siswa`
