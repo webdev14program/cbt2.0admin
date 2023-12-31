@@ -65,7 +65,17 @@ order by a_siswa.id;";
         $sql = "SELECT *,
 IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
 FROM `cbt_user`
-WHERE id NOT IN (1,2);";
+WHERE id NOT IN (1,2) AND suspended NOT IN (1);";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataSiswaMoodleBlock()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (0);";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
