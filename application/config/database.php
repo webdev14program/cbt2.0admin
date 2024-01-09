@@ -27,7 +27,7 @@ $query_builder = TRUE;
 // 	'save_queries' => TRUE
 // );
 
-<!-- $db['default'] = array(
+$db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'srv144.niagahoster.com',
 	'username' => 'webd1830_cbtonline_db',
@@ -47,7 +47,7 @@ $query_builder = TRUE;
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
-); -->
+);
 
 
 
