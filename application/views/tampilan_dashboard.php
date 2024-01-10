@@ -55,10 +55,10 @@
             </a>
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Utilities:</h6>
+                    <h6 class="collapse-header">Peserta Ujian</h6>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa">Peserta Ujian</a>
-                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_moodle">Peserta Ujian Moodle</a>
-                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_block">Blokir Perta Ujian</a>
+                    <!-- <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_moodle">Peserta Ujian Moodle</a>
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_block">Blokir Perta Ujian</a> -->
                 </div>
             </div>
         </li>
@@ -150,7 +150,7 @@
         <footer class="sticky-footer bg-warning ">
             <div class="container my-auto">
                 <div class="copyright text-center text-white my-auto">
-                    <h5 class="text-center font-weight-bold text-uppercase">Copyright &copy; smk tunas harapan</h5>
+                    <h5 class="text-center font-weight-bold text-uppercase">Copyright &copy; tunas harapan</h5>
 
                 </div>
             </div>

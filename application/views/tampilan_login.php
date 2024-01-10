@@ -35,13 +35,13 @@
 
     <div class="limiter">
         <div class="container-login100">
-            <div class="login100-more" style="background-size: cover; background-image: url('https://smkth-jakbar.com/assets/images/background3.jpeg');"></div>
+            <div class="login100-more" style="background-size: cover; background-image: url('https://img.freepik.com/premium-vector/spanduk-masa-pengenalan-lingkungan-sekolah-modern-biru-putih-dan-oranye_448156-172.jpg');"></div>
 
             <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
                 <h5 class="text-center"><img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 180px;height: 180px;" alt="IMG"></h5>
                 <form class="login100-form validate-form mt-4" method="POST" action="<?= base_url() ?>Login/proses_login">
                     <span class="login100-form-title p-b-59 text-center text-uppercase">
-                        CBT SMK TUNAS HARAPAN JAKBAR
+                        CBT TUNAS HARAPAN
                     </span>
                     <?= $this->session->flashdata('pesan'); ?>
                     <div class="wrap-input100 validate-input" data-validate="Name is required">
