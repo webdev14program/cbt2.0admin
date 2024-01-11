@@ -57,8 +57,8 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Peserta Ujian</h6>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa">Peserta Ujian</a>
-                    <!-- <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_moodle">Peserta Ujian Moodle</a>
-                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_block">Blokir Perta Ujian</a> -->
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_moodle">Peserta Ujian Moodle</a>
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_block">Blokir Perta Ujian</a>
                 </div>
             </div>
         </li>

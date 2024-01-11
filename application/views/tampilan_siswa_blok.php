@@ -85,7 +85,7 @@
                                                 <input type="text" value="<?= $row['firstnamephonetic']; ?>" name="firstnamephonetic" class="form-control" readonly hidden>
                                                 <input type="text" value="<?= $row['middlename']; ?>" name="middlename" class="form-control" readonly hidden>
                                                 <input type="text" value="<?= $row['alternatename']; ?>" name="alternatename" class="form-control" readonly hidden>
-                                                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                                <button type="submit" class="btn btn-success btn-sm">UN Block</button>
                                             </form>
                                         </h5>
                                     </td>
