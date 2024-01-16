@@ -30,10 +30,12 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">ID Seeesion</th>
                                 <th scope="col">Nama Siswa</th>
                                 <th scope="col">Kelas</th>
                                 <th scope="col">IP Login</th>
                                 <th scope="col">Waktu</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,10 +45,16 @@
                                 foreach ($status as $row) {
                                 ?>
                                     <td><?= $no++ ?></td>
+                                    <td><?= $row['id'] ?></td>
                                     <td><?= $row['firstname'] ?></td>
                                     <td><?= $row['lastname'] ?></td>
                                     <td><?= $row['firstip'] ?></td>
                                     <td><?= $row['waktu_login'] ?></td>
+                                    <td>
+                                        <h5 class="text-center">
+                                            <a class="btn btn-danger btn-sm" href="<?= $row['id'] ?">Hapus Login</a>
+                                        </h5>
+                                    </td>
                             </tr>
                         <?php } ?>
                         </tbody>
