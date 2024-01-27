@@ -52,7 +52,7 @@
                                     <td><?= $row['waktu_login'] ?></td>
                                     <td>
                                         <h5 class="text-center">
-                                            <a class="btn btn-danger btn-sm" href="<?= $row['id'] ?">Hapus Login</a>
+                                            <a class="btn btn-danger btn-sm" href="<?= base_url() ?>Dashboard/hapus_session_login/<?= $row['id'] ?>">Hapus Login</a>
                                         </h5>
                                     </td>
                             </tr>

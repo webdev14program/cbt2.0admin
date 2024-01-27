@@ -553,6 +553,7 @@ class Dashboard extends CI_Controller
 
     public function status_ujian()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi2['title'] = 'CBT | Administrator';
         $isi['content'] = 'Ujian/tampilan_status_ujian';
         $isi['ujian_hari_ini'] = $this->Model_ujian->ujian_hari_ini();
@@ -573,6 +574,13 @@ class Dashboard extends CI_Controller
         $this->load->view('templates/header', $isi2);
         $this->load->view('tampilan_dashboard', $isi);
         $this->load->view('templates/footer');
+    }
+
+    public function hapus_session_login($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('cbt_sessions');
+        redirect('Dashboard/status_peserta_login');
     }
 
     public function refresh_token($id)
