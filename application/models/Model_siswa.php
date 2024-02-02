@@ -80,7 +80,6 @@ WHERE id NOT IN (1,2) AND suspended NOT IN (0);";
         return $query->result_array();
     }
 
-
     public function header_akun_siswa($id_kelas)
     {
         $sql = "SELECT a_siswa.*,a_kelas.*,a_jurusan.*,a_kelas.kelas AS nama_kelas FROM `a_siswa`
@@ -116,6 +115,26 @@ WHERE id NOT IN (1,2) AND suspended NOT IN (0);";
         return $query->result_array();
     }
 
+    public function dataSiswaMoodleAKL()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (1) AND cbt_user.lastname LIKE ('%AKL%');";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataSiswaMoodleBlockAKL()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (0) AND cbt_user.lastname LIKE ('%akl%');";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function dataSiswaBDP()
     {
         $sql = "SELECT * FROM `a_siswa`
@@ -124,6 +143,26 @@ WHERE id NOT IN (1,2) AND suspended NOT IN (0);";
                 INNER JOIN a_jurusan
                 ON a_siswa.jurusan=a_jurusan.kode
                 WHERE a_siswa.jurusan LIKE '%pm%';";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataSiswaMoodleBDP()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (1) AND cbt_user.lastname LIKE ('%PM%');";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataSiswaMoodleBlockBDP()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (0) AND cbt_user.lastname LIKE ('%pm%');";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

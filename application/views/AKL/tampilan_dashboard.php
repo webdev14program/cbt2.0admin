@@ -48,6 +48,20 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link" href="<?= base_url() ?>Dashboard_akl/siswa_akl_moodle">
+                <i class="fas fa-user-graduate"></i>
+                <span>Peserta Moodle</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url() ?>Dashboard_akl/siswa_akl_moodle_block">
+                <i class="fas fa-user-graduate"></i>
+                <span>Peserta Moodle Block</span></a>
+        </li>
+
+
+
+        <li class="nav-item">
             <a class="nav-link" href="<?= base_url() ?>Dashboard_akl/jadwal_ujian_akl">
                 <i class="far fa-calendar-alt"></i>
                 <span>Jadwal Ujian</span></a>
