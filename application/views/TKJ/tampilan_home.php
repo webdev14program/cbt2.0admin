@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md">
         <div class="row">
             <div class="col-md">
                 <div class="card">
@@ -73,8 +73,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">NAMA Ujian</th>
-                                    <th scope="col">Token</th>
+                                    <th scope="col">NAMA UJIAN</th>
+                                    <th scope="col">NAMA MAPEL</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -83,9 +83,9 @@
                                     $no = 1;
                                     foreach ($ujian_hari_ini as $row) {
                                     ?>
-                                        <td><?= $no++ ?></td>
+                                        <td class="text-center"><?= $no++ ?></td>
+                                        <td class="">TRY - OUT SMK TH</td>
                                         <td class=""><?= $row['fullname'] ?></td>
-                                        <td class=""><?= $row['password'] ?></td>
                                 </tr>
                             <?php } ?>
                             </tbody>

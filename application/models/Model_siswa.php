@@ -120,7 +120,7 @@ WHERE id NOT IN (1,2) AND suspended NOT IN (0);";
         $sql = "SELECT *,
 IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
 FROM `cbt_user`
-WHERE id NOT IN (1,2) AND suspended NOT IN (1) AND cbt_user.lastname LIKE ('%AKL%');";
+WHERE id NOT IN (1,2) AND suspended NOT IN (1) AND firstname not IN('ADMINISTRATOR') AND cbt_user.lastname LIKE ('%AKL%');";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -152,7 +152,7 @@ WHERE id NOT IN (1,2) AND suspended NOT IN (0) AND cbt_user.lastname LIKE ('%akl
         $sql = "SELECT *,
 IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
 FROM `cbt_user`
-WHERE id NOT IN (1,2) AND suspended NOT IN (1) AND cbt_user.lastname LIKE ('%PM%');";
+WHERE id NOT IN (1,2) AND suspended NOT IN (1) AND firstname not IN('ADMINISTRATOR') AND cbt_user.lastname LIKE ('%PM%');";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -179,6 +179,26 @@ WHERE id NOT IN (1,2) AND suspended NOT IN (0) AND cbt_user.lastname LIKE ('%pm%
         return $query->result_array();
     }
 
+    public function dataSiswaMoodleOTKP()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (1) AND firstname not IN('ADMINISTRATOR') AND cbt_user.lastname LIKE ('%MPLB%');";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataSiswaMoodleBlockOTKP()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (0) AND cbt_user.lastname LIKE ('%MPLB%');";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function dataSiswaTKJ()
     {
         $sql = "SELECT * FROM `a_siswa`
@@ -188,6 +208,26 @@ WHERE id NOT IN (1,2) AND suspended NOT IN (0) AND cbt_user.lastname LIKE ('%pm%
                 ON a_siswa.jurusan=a_jurusan.kode
                 WHERE a_siswa.jurusan LIKE '%tjkt%'
                 ORDER BY a_siswa.id ASC;";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataSiswaMoodleTKJ()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (1) AND firstname not IN('ADMINISTRATOR') AND cbt_user.lastname LIKE ('%TJKT%');";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataSiswaMoodleBlockTKJ()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (0) AND cbt_user.lastname LIKE ('%TJKT%');";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

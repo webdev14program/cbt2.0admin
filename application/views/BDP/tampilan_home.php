@@ -73,8 +73,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">NAMA UJIAN</th>
                                     <th scope="col">NAMA MAPEL</th>
-                                    <th scope="col">TOKEN</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -84,8 +84,8 @@
                                     foreach ($ujian_hari_ini as $row) {
                                     ?>
                                         <td class="text-center"><?= $no++ ?></td>
+                                        <td class="">TRY - OUT SMK TH</td>
                                         <td class=""><?= $row['fullname'] ?></td>
-                                        <td class=""><?= $row['password'] ?></td>
                                 </tr>
                             <?php } ?>
                             </tbody>
