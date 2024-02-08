@@ -65,7 +65,7 @@ order by a_siswa.id;";
         $sql = "SELECT *,
 IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
 FROM `cbt_user`
-WHERE id NOT IN (1,2) AND suspended NOT IN (1);";
+WHERE id NOT IN (1,2) AND suspended  NOT IN (1) AND firstname not IN('ADMINISTRATOR')";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
