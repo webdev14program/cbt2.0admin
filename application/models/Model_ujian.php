@@ -228,11 +228,12 @@ ORDER BY cbt_course.fullname ASC";
 
     public function statusPesertaLogin()
     {
-        $sql = "SELECT cbt_sessions.id,cbt_sessions.userid,cbt_user.firstname,cbt_user.lastname,cbt_sessions.firstip,FROM_UNIXTIME(cbt_sessions.timecreated) AS waktu_login
+        $sql = "SELECT cbt_sessions.id,cbt_sessions.userid,cbt_user.firstname,cbt_user.lastname,cbt_sessions.firstip,
+FROM_UNIXTIME(cbt_sessions.timecreated) AS waktu_login
 FROM `cbt_sessions`
 INNER JOIN cbt_user
 ON cbt_user.id=cbt_sessions.userid
-";
+WHERE firstname NOT IN ('ADMINISTRATOR')";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
