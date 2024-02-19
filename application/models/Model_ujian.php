@@ -232,8 +232,7 @@ ORDER BY cbt_course.fullname ASC";
 FROM_UNIXTIME(cbt_sessions.timecreated) AS waktu_login
 FROM `cbt_sessions`
 INNER JOIN cbt_user
-ON cbt_user.id=cbt_sessions.userid
-WHERE firstname NOT IN ('ADMINISTRATOR')";
+ON cbt_user.id=cbt_sessions.userid";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
