@@ -49,37 +49,12 @@ $query_builder = TRUE;
 // 	'save_queries' => TRUE
 // );
 
-$db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'srv144.niagahoster.com',
-	'username' => 'webd1830_cbtonline_db_sas',
-	'password' => 'smktkjTH46*',
-	'database' => 'webd1830_cbtonline_db_sas',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
-
-
 // $db['default'] = array(
-// 	'port' => 3306,
 // 	'dsn'	=> '',
-// 	'hostname' => '45.32.99.14',
-// 	'username' => 'cbt',
-// 	'password' => 'smktkjTH46',
-// 	'database' => 'cbtonline_db_hari4',
+// 	'hostname' => 'srv144.niagahoster.com',
+// 	'username' => 'webd1830_cbtonline_db_sas',
+// 	'password' => 'smktkjTH46*',
+// 	'database' => 'webd1830_cbtonline_db_sas',
 // 	'dbdriver' => 'mysqli',
 // 	'dbprefix' => '',
 // 	'pconnect' => FALSE,
@@ -91,7 +66,32 @@ $db['default'] = array(
 // 	'swap_pre' => '',
 // 	'encrypt' => FALSE,
 // 	'compress' => FALSE,
-// 	//'stricton' => FALSE,
+// 	'stricton' => FALSE,
 // 	'failover' => array(),
 // 	'save_queries' => TRUE
 // );
+
+
+
+$db['default'] = array(
+	'port' => 3306,
+	'dsn'	=> '',
+	'hostname' => '149.28.141.61',
+	'username' => 'cbt',
+	'password' => 'smktkjTH46',
+	'database' => 'cbtonline_db_sas',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	//'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
