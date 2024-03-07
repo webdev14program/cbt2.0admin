@@ -245,6 +245,26 @@ WHERE id NOT IN (1,2) AND suspended NOT IN (0) AND cbt_user.lastname LIKE ('%TJK
         return $query->result_array();
     }
 
+    public function dataSiswaMoodleDKV()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (1) AND firstname not IN('ADMINISTRATOR') AND cbt_user.lastname LIKE ('%DKV%');";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function dataSiswaMoodleBlockDKV()
+    {
+        $sql = "SELECT *,
+IF(suspended=0,'AKTIF','TIDAK AKTIF') AS status
+FROM `cbt_user`
+WHERE id NOT IN (1,2) AND suspended NOT IN (0) AND cbt_user.lastname LIKE ('%dkv%');";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     function simpanSiswa($data = array())
     {
         $jumlah = count($data);

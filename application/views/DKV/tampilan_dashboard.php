@@ -47,6 +47,18 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link" href="<?= base_url() ?>Dashboard_dkv/siswa_dkv_moodle">
+                <i class="fas fa-user-graduate"></i>
+                <span>Peserta Moodle</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url() ?>Dashboard_dkv/siswa_dkv_moodle_block">
+                <i class="fas fa-user-graduate"></i>
+                <span>Peserta Moodle Block</span></a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link" href="<?= base_url() ?>Dashboard_dkv/jadwal_ujian_dkv">
                 <i class="far fa-calendar-alt"></i>
                 <span>Jadwal Ujian</span></a>

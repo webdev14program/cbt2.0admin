@@ -17,6 +17,7 @@
                                 <th scope="col">Nama Mapel</th>
                                 <th scope="col">Durasi Ujian</th>
                                 <th scope="col">Tanggal Ujian</th>
+                                <th scope="col">Waktu Ujian</th>
                             </tr>
                         </thead>
                         <tbody class="text-center">
@@ -36,7 +37,10 @@
                                         <h4 class="badge badge-info"><?= $row['timelimit'] / 60; ?> Menit</h4>
                                     </td>
                                     <td>
-                                        <h4 class="badge badge-success"><?= $row['harimulai']; ?>, <?= $row['taggalmulai']; ?> <?= $row['bulanmulai']; ?> <?= $row['tahunmulai']; ?></h4>
+                                        <h4 class="badge badge-success"><?= $row['tanggal_ujian']; ?></h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="badge badge-success"><?= $row['waktu_awal']; ?> - <?= $row['waktu_akhir']; ?></h4>
                                     </td>
                             </tr>
                         <?php } ?>

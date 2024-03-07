@@ -146,9 +146,10 @@ ORDER BY cbt_course.fullname ASC";
     public function jadwalUjian()
     {
         $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_course.fullname,cbt_course.shortname,name,timelimit,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                hour(FROM_UNIXTIME(timeopen)) as jam_awal,minute(FROM_UNIXTIME(timeopen)) as menit_awal,
-                hour(FROM_UNIXTIME(timeclose)) as jam_akhir,minute(FROM_UNIXTIME(timeclose)) as menit_akhir
+                FROM_UNIXTIME(timeopen) AS timeopen,
+								concat(DAYNAME(FROM_UNIXTIME(timeopen)),', ',date(FROM_UNIXTIME(timeopen))) AS tanggal_ujian,
+								TIME(FROM_UNIXTIME(timeopen)) as waktu_awal,
+								TIME(FROM_UNIXTIME(timeclose)) as waktu_akhir
                 FROM `cbt_quiz`
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id";
@@ -159,13 +160,14 @@ ORDER BY cbt_course.fullname ASC";
     public function jadwalUjianAKL()
     {
         $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_course.fullname,cbt_course.shortname,name,timelimit,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                hour(FROM_UNIXTIME(timeopen)) as jam_awal,minute(FROM_UNIXTIME(timeopen)) as menit_awal,
-                hour(FROM_UNIXTIME(timeclose)) as jam_akhir,minute(FROM_UNIXTIME(timeclose)) as menit_akhir
+                FROM_UNIXTIME(timeopen) AS timeopen,
+								concat(DAYNAME(FROM_UNIXTIME(timeopen)),', ',date(FROM_UNIXTIME(timeopen))) AS tanggal_ujian,
+								TIME(FROM_UNIXTIME(timeopen)) as waktu_awal,
+								TIME(FROM_UNIXTIME(timeclose)) as waktu_akhir
                 FROM `cbt_quiz`
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id
-                WHERE name LIKE '%AKL%'";
+								WHERE cbt_course.fullname LIKE '%AKL%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -173,13 +175,14 @@ ORDER BY cbt_course.fullname ASC";
     public function jadwalUjianBDP()
     {
         $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_course.fullname,cbt_course.shortname,name,timelimit,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                hour(FROM_UNIXTIME(timeopen)) as jam_awal,minute(FROM_UNIXTIME(timeopen)) as menit_awal,
-                hour(FROM_UNIXTIME(timeclose)) as jam_akhir,minute(FROM_UNIXTIME(timeclose)) as menit_akhir
+                FROM_UNIXTIME(timeopen) AS timeopen,
+								concat(DAYNAME(FROM_UNIXTIME(timeopen)),', ',date(FROM_UNIXTIME(timeopen))) AS tanggal_ujian,
+								TIME(FROM_UNIXTIME(timeopen)) as waktu_awal,
+								TIME(FROM_UNIXTIME(timeclose)) as waktu_akhir
                 FROM `cbt_quiz`
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id
-                WHERE name LIKE '%PM%'";
+								WHERE cbt_course.fullname LIKE '%PM%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -187,13 +190,14 @@ ORDER BY cbt_course.fullname ASC";
     public function jadwalUjianOTKP()
     {
         $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_course.fullname,cbt_course.shortname,name,timelimit,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                hour(FROM_UNIXTIME(timeopen)) as jam_awal,minute(FROM_UNIXTIME(timeopen)) as menit_awal,
-                hour(FROM_UNIXTIME(timeclose)) as jam_akhir,minute(FROM_UNIXTIME(timeclose)) as menit_akhir
+                FROM_UNIXTIME(timeopen) AS timeopen,
+								concat(DAYNAME(FROM_UNIXTIME(timeopen)),', ',date(FROM_UNIXTIME(timeopen))) AS tanggal_ujian,
+								TIME(FROM_UNIXTIME(timeopen)) as waktu_awal,
+								TIME(FROM_UNIXTIME(timeclose)) as waktu_akhir
                 FROM `cbt_quiz`
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id
-                WHERE name LIKE '%MPLB%'";
+								WHERE cbt_course.fullname LIKE '%MPLB%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -201,13 +205,14 @@ ORDER BY cbt_course.fullname ASC";
     public function jadwalUjianTKJ()
     {
         $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_course.fullname,cbt_course.shortname,name,timelimit,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                hour(FROM_UNIXTIME(timeopen)) as jam_awal,minute(FROM_UNIXTIME(timeopen)) as menit_awal,
-                hour(FROM_UNIXTIME(timeclose)) as jam_akhir,minute(FROM_UNIXTIME(timeclose)) as menit_akhir
+                FROM_UNIXTIME(timeopen) AS timeopen,
+								concat(DAYNAME(FROM_UNIXTIME(timeopen)),', ',date(FROM_UNIXTIME(timeopen))) AS tanggal_ujian,
+								TIME(FROM_UNIXTIME(timeopen)) as waktu_awal,
+								TIME(FROM_UNIXTIME(timeclose)) as waktu_akhir
                 FROM `cbt_quiz`
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id
-                WHERE name LIKE '%TJKT%'";
+								WHERE cbt_course.fullname LIKE '%TJKT%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -215,13 +220,14 @@ ORDER BY cbt_course.fullname ASC";
     public function jadwalUjianDKV()
     {
         $sql = "SELECT cbt_quiz.course as id_course,cbt_course.sortorder,cbt_course.fullname,cbt_course.shortname,name,timelimit,
-                FROM_UNIXTIME(timeopen) AS timeopen, dayname(FROM_UNIXTIME(timeopen)) AS harimulai, day(FROM_UNIXTIME(timeopen)) AS taggalmulai, monthname(FROM_UNIXTIME(timeopen)) AS bulanmulai, year(FROM_UNIXTIME(timeopen)) AS tahunmulai,
-                hour(FROM_UNIXTIME(timeopen)) as jam_awal,minute(FROM_UNIXTIME(timeopen)) as menit_awal,
-                hour(FROM_UNIXTIME(timeclose)) as jam_akhir,minute(FROM_UNIXTIME(timeclose)) as menit_akhir
+                FROM_UNIXTIME(timeopen) AS timeopen,
+								concat(DAYNAME(FROM_UNIXTIME(timeopen)),', ',date(FROM_UNIXTIME(timeopen))) AS tanggal_ujian,
+								TIME(FROM_UNIXTIME(timeopen)) as waktu_awal,
+								TIME(FROM_UNIXTIME(timeclose)) as waktu_akhir
                 FROM `cbt_quiz`
                 INNER JOIN cbt_course
                 ON cbt_quiz.course=cbt_course.id
-                WHERE name LIKE '%DKV%'";
+								WHERE cbt_course.fullname LIKE '%DKV%'";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

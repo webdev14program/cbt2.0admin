@@ -17,9 +17,10 @@
                                 <th scope="col">Nama Mapel</th>
                                 <th scope="col">Durasi Ujian</th>
                                 <th scope="col">Tanggal Ujian</th>
+                                <th scope="col">Waktu Ujian</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-center">
                             <tr>
                                 <?php
                                 $no = 1;
@@ -27,7 +28,7 @@
                                 ?>
                                     <td><?php echo $no++; ?></td>
                                     <td>
-                                        <h4 class="badge badge-primary"><?= $row['sortorder']; ?></h4>
+                                        <h4 class="badge badge-primary text-uppercase"><?= $row['sortorder']; ?></h4>
                                     </td>
                                     <td>
                                         <h4 class="badge badge-info text-uppercase"><?= $row['fullname']; ?></h4>
@@ -36,9 +37,11 @@
                                         <h4 class="badge badge-info"><?= $row['timelimit'] / 60; ?> Menit</h4>
                                     </td>
                                     <td>
-                                        <h4 class="badge badge-success"><?= $row['harimulai']; ?>, <?= $row['taggalmulai']; ?> <?= $row['bulanmulai']; ?> <?= $row['tahunmulai']; ?></h4>
+                                        <h4 class="badge badge-success"><?= $row['tanggal_ujian']; ?></h4>
                                     </td>
-
+                                    <td>
+                                        <h4 class="badge badge-success"><?= $row['waktu_awal']; ?> - <?= $row['waktu_akhir']; ?></h4>
+                                    </td>
                             </tr>
                         <?php } ?>
                         </tbody>
