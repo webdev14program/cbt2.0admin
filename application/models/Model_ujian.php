@@ -65,68 +65,63 @@ ON cbt_quiz.course=cbt_course.id
     }
     public function ujian_hari_ini_akl()
     {
-        //         $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_course`
-        // INNER JOIN cbt_quiz
-        // ON cbt_quiz.course=cbt_course.id
-        // WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%akl%'
-        // ORDER BY cbt_course.fullname ASC";
-        $sql = "SELECT cbt_course.fullname FROM `cbt_course`
-WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%akl%'
+        $sql = "SELECT cbt_course.fullname, COUNT(*) AS jumlah_siswa FROM cbt_enrol
+INNER JOIN cbt_course
+ON cbt_enrol.courseid=cbt_course.id
+INNER JOIN cbt_user_enrolments
+ON cbt_enrol.id=cbt_user_enrolments.enrolid
+INNER JOIN cbt_user
+ON cbt_user_enrolments.userid=cbt_user.id
+WHERE cbt_course.visible=1 AND cbt_course.fullname LIKE '%akl%'
+GROUP BY cbt_course.id
 ORDER BY cbt_course.fullname ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
-    //     public function token_x_akl()
-    //     {
-    //         $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_quiz`
-    // INNER JOIN cbt_course
-    // ON cbt_quiz.course=cbt_course.id
-    // WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%x akl%';";
-    //         $query = $this->db->query($sql);
-    //         return $query->result_array();
-    //     }
 
-    //     public function token_xi_akl()
-    //     {
-    //         $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_quiz`
-    // INNER JOIN cbt_course
-    // ON cbt_quiz.course=cbt_course.id
-    // WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%xi akl%';";
-    //         $query = $this->db->query($sql);
-    //         return $query->result_array();
-    //     }
-
-    //     public function token_xii_akl()
-    //     {
-    //         $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_quiz`
-    // INNER JOIN cbt_course
-    // ON cbt_quiz.course=cbt_course.id
-    // WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%xii akl%';";
-    //         $query = $this->db->query($sql);
-    //         return $query->result_array();
-    //     }
 
     public function ujian_hari_ini_bdp()
     {
-        $sql = "SELECT cbt_course.fullname FROM `cbt_course`
-WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%pm%'
+        $sql = "SELECT cbt_course.fullname, COUNT(*) AS jumlah_siswa FROM cbt_enrol
+INNER JOIN cbt_course
+ON cbt_enrol.courseid=cbt_course.id
+INNER JOIN cbt_user_enrolments
+ON cbt_enrol.id=cbt_user_enrolments.enrolid
+INNER JOIN cbt_user
+ON cbt_user_enrolments.userid=cbt_user.id
+WHERE cbt_course.visible=1 AND cbt_course.fullname LIKE '%PM%'
+GROUP BY cbt_course.id
 ORDER BY cbt_course.fullname ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
     public function ujian_hari_ini_otkp()
     {
-        $sql = "SELECT cbt_course.fullname FROM `cbt_course`
-WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%mplb%'
-ORDER BY cbt_course.fullname ASC;";
+        $sql = "SELECT cbt_course.fullname, COUNT(*) AS jumlah_siswa FROM cbt_enrol
+INNER JOIN cbt_course
+ON cbt_enrol.courseid=cbt_course.id
+INNER JOIN cbt_user_enrolments
+ON cbt_enrol.id=cbt_user_enrolments.enrolid
+INNER JOIN cbt_user
+ON cbt_user_enrolments.userid=cbt_user.id
+WHERE cbt_course.visible=1 AND cbt_course.fullname LIKE '%MPLB%'
+GROUP BY cbt_course.id
+ORDER BY cbt_course.fullname ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
     public function ujian_hari_ini_tkj()
     {
-        $sql = "SELECT cbt_course.fullname FROM `cbt_course`
-WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%tjkt%'
+        $sql = "SELECT cbt_course.fullname, COUNT(*) AS jumlah_siswa FROM cbt_enrol
+INNER JOIN cbt_course
+ON cbt_enrol.courseid=cbt_course.id
+INNER JOIN cbt_user_enrolments
+ON cbt_enrol.id=cbt_user_enrolments.enrolid
+INNER JOIN cbt_user
+ON cbt_user_enrolments.userid=cbt_user.id
+WHERE cbt_course.visible=1 AND cbt_course.fullname LIKE '%tjkt%'
+GROUP BY cbt_course.id
 ORDER BY cbt_course.fullname ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -134,10 +129,15 @@ ORDER BY cbt_course.fullname ASC";
 
     public function ujian_hari_ini_dkv()
     {
-        $sql = "SELECT cbt_course.fullname,cbt_quiz.password FROM `cbt_course`
-INNER JOIN cbt_quiz
-ON cbt_quiz.course=cbt_course.id
-WHERE cbt_course.visible='1' AND cbt_course.fullname LIKE '%dkv%'
+        $sql = "SELECT cbt_course.fullname, COUNT(*) AS jumlah_siswa FROM cbt_enrol
+INNER JOIN cbt_course
+ON cbt_enrol.courseid=cbt_course.id
+INNER JOIN cbt_user_enrolments
+ON cbt_enrol.id=cbt_user_enrolments.enrolid
+INNER JOIN cbt_user
+ON cbt_user_enrolments.userid=cbt_user.id
+WHERE cbt_course.visible=1 AND cbt_course.fullname LIKE '%dkv%'
+GROUP BY cbt_course.id
 ORDER BY cbt_course.fullname ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
