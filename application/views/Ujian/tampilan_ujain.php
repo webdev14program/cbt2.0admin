@@ -17,7 +17,7 @@
                                 <th scope="col">Nama Mapel</th>
                                 <th scope="col">Durasi Ujian</th>
                                 <th scope="col">Tanggal Ujian</th>
-                                <th scope="col">Waktu Ujian</th>
+                                <!-- <th scope="col">Waktu Ujian</th> -->
                             </tr>
                         </thead>
                         <tbody class="text-center">
@@ -39,9 +39,9 @@
                                     <td>
                                         <h4 class="badge badge-success"><?= $row['tanggal_ujian']; ?></h4>
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         <h4 class="badge badge-success"><?= $row['waktu_awal']; ?> - <?= $row['waktu_akhir']; ?></h4>
-                                    </td>
+                                    </td> -->
                             </tr>
                         <?php } ?>
                         </tbody>
