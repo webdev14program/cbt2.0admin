@@ -72,9 +72,31 @@ $query_builder = TRUE;
 // );
 
 
+// $db['default'] = array(
+// 	'dsn'	=> '',
+// 	'hostname' => '108.61.96.35',
+// 	'username' => 'cbt',
+// 	'password' => 'smktkjTH46',
+// 	'database' => 'cbtonline_db_fix_hari2',
+// 	'dbdriver' => 'mysqli',
+// 	'dbprefix' => '',
+// 	'pconnect' => FALSE,
+// 	'db_debug' => (ENVIRONMENT !== 'production'),
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	'char_set' => 'utf8',
+// 	'dbcollat' => 'utf8_general_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array(),
+// 	'save_queries' => TRUE
+// );
+
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '108.61.96.35',
+	'hostname' => '149.28.161.114',
 	'username' => 'cbt',
 	'password' => 'smktkjTH46',
 	'database' => 'cbtonline_db_fix_hari2',
@@ -93,25 +115,3 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-
-// $db['default'] = array(
-// 	'dsn'	=> '',
-// 	'hostname' => '149.28.161.114',
-// 	'username' => 'cbt',
-// 	'password' => 'smktkjTH46',
-// 	'database' => 'cbtonline_db_fix',
-// 	'dbdriver' => 'mysqli',
-// 	'dbprefix' => '',
-// 	'pconnect' => FALSE,
-// 	'db_debug' => (ENVIRONMENT !== 'production'),
-// 	'cache_on' => FALSE,
-// 	'cachedir' => '',
-// 	'char_set' => 'utf8',
-// 	'dbcollat' => 'utf8_general_ci',
-// 	'swap_pre' => '',
-// 	'encrypt' => FALSE,
-// 	'compress' => FALSE,
-// 	'stricton' => FALSE,
-// 	'failover' => array(),
-// 	'save_queries' => TRUE
-// );
