@@ -116,35 +116,12 @@ $query_builder = TRUE;
 // 	'save_queries' => TRUE
 // );
 
-$db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => '149.28.161.114',
-	'username' => 'cbt',
-	'password' => 'smktkjTH46',
-	// 'database' => 'cbtonline_db_fix_hari4',
-	'database' => 'cbtonline_db_fix',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
 // $db['default'] = array(
 // 	'dsn'	=> '',
 // 	'hostname' => '149.28.161.114',
 // 	'username' => 'cbt',
 // 	'password' => 'smktkjTH46',
-// 	'database' => 'cbtonline_db_fix_hari3_malam',
+// 	'database' => 'cbtonline_db_fix_hari4',
 // 	'dbdriver' => 'mysqli',
 // 	'dbprefix' => '',
 // 	'pconnect' => FALSE,
@@ -160,3 +137,25 @@ $db['default'] = array(
 // 	'failover' => array(),
 // 	'save_queries' => TRUE
 // );
+
+$db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => '149.28.161.114',
+	'username' => 'cbt',
+	'password' => 'smktkjTH46',
+	'database' => 'cbtonline_db_fix_hari4_malam',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
