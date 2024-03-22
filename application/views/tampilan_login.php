@@ -41,7 +41,7 @@
                 <h5 class="text-center"><img src="https://smkth-jakbar.com/assets/images/logo.png" style="width: 180px;height: 180px;" alt="IMG"></h5>
                 <form class="login100-form validate-form mt-4" method="POST" action="<?= base_url() ?>Login/proses_login">
                     <span class="login100-form-title p-b-59 text-center text-uppercase">
-                        CBT TUNAS HARAPAN
+                        CBT TUNAS HARAPAN MALAM
                     </span>
                     <?= $this->session->flashdata('pesan'); ?>
                     <div class="wrap-input100 validate-input" data-validate="Name is required">
