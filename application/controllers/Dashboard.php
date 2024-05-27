@@ -12,6 +12,7 @@ class Dashboard extends CI_Controller
         $this->Model_keamanan->getKeamanan();
         $isi['jurusan'] = $this->Model_jurusan->countJurusan();
         $isi['siswa'] = $this->Model_siswa->countSiswa();
+
         $isi['kelas'] = $this->Model_kelas->countKelas();
         $isi['mapel'] = $this->Model_mapel->countMapel();
         $isi['ujian'] = $this->Model_ujian->countUjian();
@@ -26,6 +27,22 @@ class Dashboard extends CI_Controller
 
         $isi2['title'] = 'CBT | Administrator';
         $isi['content'] = 'tampilan_home';
+        $this->load->view('templates/header', $isi2);
+        $this->load->view('tampilan_dashboard', $isi);
+        $this->load->view('templates/footer', $isi);
+    }
+
+    public function moodle()
+    {
+        $this->Model_keamanan->getKeamanan();
+        $isi['siswa_moodle'] = $this->Model_siswa->countSiswaMoodle();
+        $isi['siswa_aktif'] = $this->Model_siswa->countSiswaMoodleAktif();
+        $isi['siswa_non_aktif'] = $this->Model_siswa->countSiswaMoodleNONAktif();
+
+        // $isi['siswa_login'] = $this->Model_siswa->countSiswaMoodleLogin();
+
+        $isi2['title'] = 'CBT | Administrator';
+        $isi['content'] = 'tampilan_dashboard_moodle';
         $this->load->view('templates/header', $isi2);
         $this->load->view('tampilan_dashboard', $isi);
         $this->load->view('templates/footer', $isi);
@@ -742,6 +759,9 @@ class Dashboard extends CI_Controller
         $isi2['title'] = 'CBT | Administrator';
         $this->load->view('Ujian/tampilan_print_nilai', $isi);
     }
+
+
+
 
     public function logout()
     {

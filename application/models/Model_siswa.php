@@ -10,6 +10,49 @@ class Model_siswa extends CI_Model
         return $query->row()->siswa;
     }
 
+    public function countSiswaMoodle()
+    {
+        $sql = "SELECT COUNT(*) AS jumlah_siswa_moodle FROM `cbt_user`
+        WHERE firstname  NOT IN ('ADMINISTRATOR') AND id NOT IN(1);";
+        $query = $this->db->query($sql);
+        return $query->row()->jumlah_siswa_moodle;
+    }
+
+    public function countSiswaMoodleAktif()
+    {
+        $sql = "SELECT COUNT(*) AS siswa_aktif FROM `cbt_user`
+WHERE firstname  NOT IN ('ADMINISTRATOR') AND id NOT IN(1) AND suspended NOT IN (1);";
+        $query = $this->db->query($sql);
+        return $query->row()->siswa_aktif;
+    }
+
+    public function countSiswaMoodleNONAktif()
+    {
+        $sql = "SELECT COUNT(*) AS siswa_non_aktif FROM `cbt_user`
+WHERE firstname  NOT IN ('ADMINISTRATOR') AND id NOT IN(1) AND suspended IN (1);";
+        $query = $this->db->query($sql);
+        return $query->row()->siswa_non_aktif;
+    }
+
+    //     public function countSiswaMoodleLogin()
+    //     {
+    //         $sql = "SELECT COUNT(*) AS siswa_login FROM `cbt_sessions`
+    // INNER JOIN cbt_user
+    // ON cbt_sessions.userid=cbt_user.id
+    // WHERE cbt_user.firstname NOT IN ('ADMINISTRATOR')
+    // GROUP BY cbt_user.id;";
+    //         $query = $this->db->query($sql);
+    //         return $query->row()->siswa_login;
+    //     }
+
+    //     public function countSiswaMoodleBelumLogin()
+    //     {
+    //         $sql = "SELECT COUNT(*) AS siswa_belum_login FROM `cbt_user`
+    // WHERE cbt_user.firstaccess IN (0) AND cbt_user.username NOT IN ('guest') AND cbt_user.firstname NOT IN ('ADMINISTRATOR');";
+    //         $query = $this->db->query($sql);
+    //         return $query->row()->siswa_login;
+    //     }
+
     public function countAKL()
     {
         $sql = "SELECT COUNT(*) AS akl FROM `a_siswa`

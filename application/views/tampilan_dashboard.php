@@ -18,7 +18,11 @@
                 <i class="fas fa-school"></i>
                 <span>Dashboard</span></a>
         </li>
-
+        <li class="nav-item active">
+            <a class="nav-link" href="<?= base_url() ?>Dashboard/moodle">
+                <i class="fas fa-school"></i>
+                <span>Dashboard Moodel</span></a>
+        </li>
         <!-- Divider -->
         <hr class="sidebar-divider">
 
@@ -56,7 +60,7 @@
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Peserta Ujian</h6>
-                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa">Peserta Ujian</a>
+                    <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa">Peserta Ujian Admin</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_moodle">Peserta Ujian Moodle</a>
                     <a class="collapse-item" href="<?= base_url() ?>Dashboard/siswa_block">Blokir Perta Ujian</a>
                 </div>
