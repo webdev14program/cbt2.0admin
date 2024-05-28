@@ -74,7 +74,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">NAMA MAPEL</th>
-                                    <th scope="col">Jumlah Siswa</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -85,7 +85,7 @@
                                     ?>
                                         <td class="text-center"><?= $no++ ?></td>
                                         <td class="text-uppercase"><?= $row['fullname'] ?></td>
-                                        <td class="text-uppercase text-center"><?= $row['jumlah_siswa'] ?> Siswa</td>
+
                                 </tr>
                             <?php } ?>
                             </tbody>
