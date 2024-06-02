@@ -566,7 +566,7 @@ class Dashboard extends CI_Controller
         $isi['siswa'] = $this->Model_siswa->akun_siswa($id_kelas);
         $isi['title'] = 'CBT | Administrator';
         $this->load->view('Ujian/print_kartu_siswa', $isi);
-    }
+    } 
 
     public function status_ujian()
     {

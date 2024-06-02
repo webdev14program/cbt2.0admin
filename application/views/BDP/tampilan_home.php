@@ -71,10 +71,9 @@
                     <div class="card-body">
                         <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
-                                <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">NAMA MAPEL</th>
-                                </tr>
+                                    <th scope="col">Jumlah Siswa</th>
                             </thead>
                             <tbody>
                                 <tr>
@@ -84,7 +83,8 @@
                                     ?>
                                         <td class="text-center"><?= $no++ ?></td>
                                         <td class="text-uppercase"><?= $row['fullname'] ?></td>
-
+                                        <td class="text-uppercase"><?= $row['jumlah_siswa'] ?> siswa</td>
+                                </tr>
                                 </tr>
                             <?php } ?>
                             </tbody>
@@ -93,5 +93,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>

@@ -22,7 +22,7 @@
                             <th scope="col">#</th>
                             <th scope="col">ID</th>
                             <th scope="col">NAMA MAPEL</th>
-                            <th scope="col">Keterangan Ujian</th>
+                            <th scope="col">Siswa</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,7 +34,7 @@
                                 <td class="text-center text-uppercase"><?= $no++ ?></td>
                                 <td class="text-center text-uppercase"><?= $row['sortorder'] ?></td>
                                 <td class="text-center text-uppercase"><?= $row['fullname'] ?></td>
-                                <td class="text-center text-uppercase"><?= $row['status_ujian'] ?></td>
+                                <td class="text-center text-uppercase"><?= $row['jumlah_siswa'] ?> siswa</td>
                         </tr>
                     <?php } ?>
                     </tbody>
